@@ -1,0 +1,6 @@
+.container .produtos .produtos-cabeca {
+    background: red;
+    height: 200px;
+    width: inherit;
+    margin-top: 10px;
+}
