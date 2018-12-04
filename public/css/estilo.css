@@ -1,0 +1,196 @@
+
+.header-v4  {
+   
+}
+a:hover {
+    color: #dc3545;
+}
+.header-v4 .container-menu-desktop .top-bar .right-top-bar  img {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.header-v4 .container-menu-desktop .wrap-menu-desktop .limiter-menu-desktop .wrap-icon-header  img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-top: -3px;
+    margin-left: 29px;
+}
+/*==========================================================================
+[social]*/
+.header-v4 .container-menu-desktop .top-bar .left-top-bar {
+    margin-left: 59px;
+}
+.header-v4 .container-menu-desktop .top-bar .left-top-bar .social {
+    color: #FFF;
+    margin-left: 12px;
+} 
+.header-v4 .container-menu-desktop .top-bar .left-top-bar .social:hover {
+    color: #dc3545;
+    transition: 0.2s all;
+}
+
+/*========================================================================
+[menu-sidebar] */
+.principal {
+    margin-bottom: -140px;
+    padding-bottom: 0;
+}
+.container .tudo  .menu-sidebar {
+    
+    padding-bottom: -90px;
+}
+.container .tudo  .menu-sidebar .cabeca {
+    border-bottom: 1px solid #222;
+    height: 60px;
+    padding: 5px;
+    
+}
+.container .tudo  .menu-sidebar .cabeca h3 {
+    font-size: 19px;
+}
+.container .tudo  .menu-sidebar .corpo .nav  {
+    border-bottom: 1px solid #222;
+    margin-top: 16px;
+    
+}
+.container .tudo  .menu-sidebar .corpo .nav  .icon {
+    margin-left: 15px;
+}
+.container .tudo  .menu-sidebar .corpo .nav li {
+    
+    border-bottom: 1px solid #ccc;
+}
+.container .tudo  .menu-sidebar .corpo .nav li a {
+    text-transform: uppercase;
+    font-family: Poppins-Light;
+    font-weight: 90;
+    color: #666666;
+    transition: all 0.4s;
+}
+.container .tudo  .menu-sidebar .corpo .nav li a:hover {
+    color: #dc3545;
+    transition: all 0.4s;
+} 
+.container .tudo  .menu-sidebar .roda-pe {
+    height: 720px;
+    background: #888;
+}
+.principal .painel h2 {
+    font-family: Poppins-Medium;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+.principal .painel .owl-carousel {
+   width: 100%;
+   margin: 0 auto;
+}
+.principal .painel .owl-carousel .item {
+
+    margin-left: 12px;
+}
+.principal .painel .owl-carousel .item:hover {
+    border-radius: 5px;
+    border: 1px solid #666666;
+}
+.principal .painel .owl-carousel .item .img {
+    background:#ccc;
+    border-radius: 5px;
+}
+.principal .painel .owl-carousel .item .acao {
+    margin-top: -19px;
+    margin-right: 10px;
+}
+.principal .painel .owl-carousel .item .acao .fa-trash {
+    color: #dc3545;
+}
+.principal .painel .owl-carousel .item .acao .fa-edit {
+    color: green;
+}
+.principal .painel .row .disponivel {
+    margin-top: 70px;
+   
+    padding: 0;
+}
+.principal .painel .row {
+    padding: 0;
+}
+.principal .painel .row .disponivel .corpo {
+    margin-left: 59px;
+}
+.principal .painel .row .disponivel .corpo .corpo-img {
+    background: #ccc;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: auto;
+    padding-bottom: 9px;
+    float: left;
+    border-top-right-radius: 15px;
+}
+.principal .painel .row .disponivel .corpo .corpo-img .caption {
+    border-top: 1px solid #f8f8f8;
+}
+.principal .painel .row .disponivel .corpo .corpo-img .caption p {
+    font-weight: bold;
+    font-family: Oppins-Regular;
+    color: #f8f8f8;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+.principal .painel .row .disponivel .corpo .corpo-img .caption p  .pull-right {
+    margin-top: 22px;
+}
+.principal .painel .row .disponivel .corpo .corpo-img .caption p .fa-edit {
+    color: #666666;
+    margin-right: 12px;
+    
+}
+.principal .painel .row .disponivel .corpo .corpo-img .caption p .fa-trash {
+    color: #666666;
+    margin-right: 12px;
+    
+}
+
+/*======================================================================================
+[ funcionaros ] */
+.principal .funcionarios .func-cabecalho {
+    
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    
+}
+
+.principal .funcionarios .add-func {
+    margin-top: 32px;
+}
+.principal .funcionarios .list-func {
+    margin-top: 32px;
+    margin-left: 23px;
+}
+.principal .funcionarios .list-func  .user {
+    background: #dc3545;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    float: left;
+}
+/*===========================================================================================
+[encomenda]*/
+.principal .funcionarios .add-func .cabeca-encomenda {
+    margin-bottom: 22px;
+}
+.principal .funcionarios .add-func .cabeca-encomenda .esquerdo .btn {
+    margin-top: 8px;
+}
+.principal .funcionarios .add-func .cabeca-encomenda .direito {
+    margin-top: -22px;
+}
+.principal .tudo .head-func .row .func-cabecalho{
+    padding-bottom: 22px;
+}
