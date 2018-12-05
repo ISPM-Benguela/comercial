@@ -14,7 +14,7 @@ class EncomendaController extends Controller
      */
     public function index()
     {
-        //
+        return view('encomendas.index');
     }
 
     /**
