@@ -97,7 +97,7 @@
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 	
-							<img src="images/perfil/perfil.jpg"  alt="perfil "/>
+							<img src="{{asset('images/user.jpg')}}"  alt="perfil "/>
 						</div>
 					</nav>
 				</div>
