@@ -26,17 +26,17 @@
           <tbody>
           <tfoot>
            <tr>
-             <th>Nome</th>
-             <th>cargo</th>
-             <th>Habilitacao</th>
+             <th>Cliente</th>
+             <th>Produto</th>
+             <th>Quantidade</th>
              <th>Acao</th>
            </tr> 
           </tfoot>
           <tbody>
            <tr>
               <td>Jose Tandala</td>
-              <td>CEO</td>
-              <td>Bacharal</td>
+              <td>Computador Mac</td>
+              <td>5</td>
               <td>
                   <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
                   <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
@@ -44,26 +44,26 @@
            </tr>
            <tr>
               <td>Armando katito</td>
-              <td>Product Manager</td>
-              <td>Bacharel</td>
+              <td>Servidor HP</td>
+              <td>4</td>
               <td>
                  <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
                   <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
               </td>
            </tr>
            <tr>
-              <td>Armando katito</td>
-              <td>Product Manager</td>
-              <td>Bacharel</td>
+              <td>Humberto Fortes</td>
+              <td>Computador Desktop Mac</td>
+              <td>1</td>
               <td>
                   <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
                   <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
               </td>
            </tr>
            <tr>
-              <td>Armando katito</td>
-              <td>Product Manager</td>
-              <td>Bacharel</td>
+              <td>Bernadeth Bueke</td>
+              <td>Kit electronica</td>
+              <td>3</td>
               <td>
                   <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
                   <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
