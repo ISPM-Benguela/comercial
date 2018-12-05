@@ -40,7 +40,7 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('nivel', 'NivelController');
 
         Route::resource('previlegios', 'PrevilegioController');
-       # Route::resource('produtos', 'ProdutoController');
+       #s Route::resource('produtos', 'ProdutoController');
 
         });
 });
