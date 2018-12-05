@@ -294,11 +294,17 @@
 						<div class="corpo">
 							<ul class="nav">
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
-									<li><i class="icon fa fa-list-ol"></i><a href="categorias.html"> Categorias <span class="badge badge-danger">5</span></a></li>
-									<li><i class="icon fa fa-group"></i><a href="funcionarios.html"> Funcionarios <span class="badge badge-danger">8</span></a></li>
-									<li><i class="icon fa fa-gift"></i><a href="encomendas.html"> Encomendas <span class="badge badge-danger">15</span> </a></li>
-									<li><i class="icon fa fa-feed"></i><a href="notificacao.html"> Notificações <span class="badge badge-danger">15</span></a></li>
-									<li><i class="icon fa fa-gears"></i><a href="configuracao.html"> Configurações </a></li>
+									<li><i class="icon fa fa-list-ol"></i><a href="#" data-toggle="collapse" data-target="#categoria"> Categorias  <i class="fa fa-fw fa-caret-down"></i></a>
+										<ul id="categoria" class="collapse">
+											<li><a href="">Electro domestico</a></li>
+											<li><a href="">Roupas</a></li>
+											<li><a href="">Acessorios</a></li>
+										</ul>
+									</li>
+									<li><i class="icon fa fa-group"></i><a href="#"> Aprovar  vendas</a></li>
+									<li><i class="icon fa fa-gift"></i><a href="#"> Encomendas <span class="badge badge-danger">15</span> </a></li>
+									<li><i class="icon fa fa-feed"></i><a href="#"> Notificações <span class="badge badge-danger">15</span></a></li>
+									<li><i class="icon fa fa-gears"></i><a href="#s"> Configurações </a></li>
 							</ul>
 						</div>
 						<div class="roda-pe">
