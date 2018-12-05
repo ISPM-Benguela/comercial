@@ -139,7 +139,7 @@
 				<ul class="topbar-mobile">
 					<li>
 						<div class="left-top-bar">
-							Free shipping for standard order over $100
+							
 						</div>
 					</li>
 	
@@ -293,7 +293,7 @@
 						</div>
 						<div class="corpo">
 							<ul class="nav">
-									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}s"> Produtos <span class="badge">43</span></a></li>
+									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
 									<li><i class="icon fa fa-list-ol"></i><a href="categorias.html"> Categorias <span class="badge badge-danger">5</span></a></li>
 									<li><i class="icon fa fa-group"></i><a href="funcionarios.html"> Funcionarios <span class="badge badge-danger">8</span></a></li>
 									<li><i class="icon fa fa-gift"></i><a href="encomendas.html"> Encomendas <span class="badge badge-danger">15</span> </a></li>

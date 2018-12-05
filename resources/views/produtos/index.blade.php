@@ -19,9 +19,9 @@
        <div class="row">
          <div class="owl-carousel owl-them">
            <div class="item thumbnail">
-             <img src="images/product-01.jpg" />
+             <img src="images/product-15.jpg" />
              <div class="caption">
-                <h3>Nome do produto</h3>
+                <h3>Relogio Gucci</h3>
                 <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
 
                 <p>Este e um bom produto que vale a penas
@@ -45,7 +45,7 @@
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
-             <img src="images/product-03.jpg" />
+             <img src="images/product-06.jpg" />
              <div class="caption">
                 <h3>Nome do produto</h3>
                 <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
@@ -87,8 +87,62 @@
        </div>
      </div><!--./ produtos-cabecas -->
      <div class="produtos-corpo">
+       <h3><i class="fa fa-barcode"></i> Produtos desponiveis</h3>
+       <div class="row">
+         
+           <div class="col-md-3 thumbnail">
+              <img src="images/product-02.jpg" />
+              <div class="caption">
+              <p>Nome do produto</p>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
 
-     </div>
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
+           </div><!-- ./ item -->
+           <div class="col-md-3 thumbnail">
+             <img src="images/product-06.jpg" />
+             <div class="caption">
+                <p>Nome do produto</p>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a> 
+                 <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
+           </div><!-- ./ item -->
+           <div class="col-md-3 thumbnail">
+             <img src="images/product-04.jpg" />
+              <div class="caption">
+              <p>Nome do produto</p>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
+           </div><!-- ./ item -->
+           <div class="col-md-3 thumbnail">
+             <img src="images/product-04.jpg" />
+              <div class="caption">
+              <p>Nome do produto</p>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
+           </div><!-- ./ item -->
+         </div>
+         <nav class="pagination">
+           <ul class="pager">
+             <li><a href="">Ultimo</a></li>
+             <li><a href="">1</a></li>
+             <li><a href="">2</a></li>
+             <li><a href="">3</a></li>
+             <li><a href="">4</a></li>
+             <li><a href="">Proximo</a></li>
+           </ul>
+         </nav>
+       </div><!-- ./ row -->
+      </div><!-- ./ produtos-corpo -->
   </div><!-- ./ produtos -->
   
 

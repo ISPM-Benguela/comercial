@@ -16,3 +16,26 @@
 .container .produtos .produtos-cabeca .row .owl-carousel .item .caption .catalogo  small {
     font-size: 10px;
 }
+.container .produtos .produtos-corpo {
+    height: auto;
+    background: #ccc;
+    padding: 20px;
+}
+.container .produtos .produtos-corpo h3 {
+    padding-top: 10px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+.container .produtos .produtos-corpo .row .thumbnail {
+    margin-bottom: -20px;
+}
+.container .produtos .produtos-corpo .row .thumbnail .caption {
+    background: #888;
+    margin-top: -9px;
+}
+.container .produtos .produtos-corpo .row .pagination {
+    margin-top: -40px;
+}
