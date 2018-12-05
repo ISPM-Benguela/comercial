@@ -20,18 +20,68 @@
          <div class="owl-carousel owl-them">
            <div class="item thumbnail">
              <img src="images/product-01.jpg" />
+             <div class="caption">
+                <h3>Nome do produto</h3>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                <p>Este e um bom produto que vale a penas
+                 dar um golpede vista nele.</p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                   <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
-           <img src="images/product-02.jpg" />
+              <img src="images/product-02.jpg" />
+              <div class="caption">
+                <h3>Nome do produto</h3>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                <p>Este e um bom produto que vale a penas
+                 dar um golpede vista nele.</p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
-           <img src="images/product-03.jpg" />
+             <img src="images/product-03.jpg" />
+             <div class="caption">
+                <h3>Nome do produto</h3>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                <p>Este e um bom produto que vale a penas
+                 dar um golpede vista nele.</p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a> 
+                 <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
-           <img src="images/product-04.jpg" />
+             <img src="images/product-04.jpg" />
+              <div class="caption">
+                <h3>Nome do produto</h3>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                <p>Este e um bom produto que vale a penas
+                 dar um golpede vista nele.</p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
            <img src="images/product-05.jpg" />
+           <div class="caption">
+                <h3>Nome do produto</h3>
+                <p class="catalogo">23.00 Kz <small>Estoque: 33</small></p>
+
+                <p>Este e um bom produto que vale a penas
+                 dar um golpede vista nele.</p>
+
+                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+             </div><!-- ./ caption -->
            </div><!-- ./ item -->
          </div>
        </div>

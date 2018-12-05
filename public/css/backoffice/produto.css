@@ -9,3 +9,10 @@
     
     margin-right: 5px;
 }
+.container .produtos .produtos-cabeca .row .owl-carousel .item .caption .catalogo {
+    font-weight: bolder;
+    font-size: 19px;
+}
+.container .produtos .produtos-cabeca .row .owl-carousel .item .caption .catalogo  small {
+    font-size: 10px;
+}

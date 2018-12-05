@@ -49,3 +49,6 @@ Route::group(["middleware" => "auth"], function(){
 Route::resource('produtos', 'ProdutoController');
 
 Route::resource('categorias', 'ProdutoController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

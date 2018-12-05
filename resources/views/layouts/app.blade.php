@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 <head>
-	<title>{{ config('app.name', 'iShopping')}} - @yield('titulo', 'Inicio')</title>
-    <meta charset="UTF-8">
-    
-    <!-- CSRDF Token -->
-    <meta name="csrf_token" content="{{ csrf_token() }}">
+	<title>Product</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{{asset('images/icons/favicon.png')}}"/>
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
-<link rel="stylesheet" href="{{asset('css/app.css')}}">	
-<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+	
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
@@ -27,7 +24,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('vendor/select2/select2.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('vendor/daterangepicker/daterangepicker.cs')}}s">
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/daterangepicker/daterangepicker.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('vendor/slick/slick.css')}}">
 <!--===============================================================================================-->
@@ -38,8 +35,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
 	<link rel="stylesheet" href="{{asset('css/estilo.css')}}">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-	@yield('head')
+    @yield('head')
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -56,7 +52,7 @@
 						</div>
 	
 						<div class="right-top-bar flex-w h-full">
-							<a href="{{route('usuarios.index')}}" class="flex-c-m trans-04 p-lr-25">
+							<a href="#" class="flex-c-m trans-04 p-lr-25">
 								Ver O site
 							</a>
 	
@@ -65,17 +61,8 @@
 							</a>
 	
 							<a href="#" class="flex-c-m trans-04 p-lr-25">
-								{{ Auth::user()->name }} ( <span>Administrador</span>)
-                            </a>
-                            <a href="#" class="flex-c-m trans-04 p-lr-25" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                                    
-                           Sair
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                         </form>
+								Tandavala ( <span>Administrador</span>)
+							</a>
 						
 						</div>
 					</div>
@@ -85,8 +72,8 @@
 					<nav class="limiter-menu-desktop container">
 	
 						<!-- Logo desktop -->
-						<a href="#" class="logo" style="font-size: 15px; text-transform: uppercase;">
-							{{config('app.name',"iShopping")}}
+						<a href="#" class="logo">
+							<img src="{{asset('images/icons/logo-01.png')}}" height="30" alt="IMG-LOGO">
 						</a>
 	
 						<!-- Menu desktop -->
@@ -95,8 +82,8 @@
 								<li>
 									<a href="{{route('usuarios.index')}}"><i class="fa fa-group"></i> Funcionarios</a>
 								</li>
-								<li><a href="{{route('nivel.index')}}"><i class="fa fa-key"></i> Niveis</a></li>
-								<li><a href="{{route('previlegios.index')}}"><i class="fa fa-lock"></i> Previlegios</a></li>
+								<li><a href="{{route('previlegios.index')}}"><i class="fa fa-key"></i> Previlégios</a></li>
+								<li><a href="{{route('nivel.index')}}"><i class="fa fa-unlock"></i> Niveis</a></li>
 							</ul>
 						</div>
 	
@@ -110,7 +97,7 @@
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 	
-							<img src="{{asset('images/perfil/perfil.jpg')}}"  alt="ok "/>
+							<img src="images/perfil/perfil.jpg"  alt="perfil "/>
 						</div>
 					</nav>
 				</div>
@@ -205,7 +192,7 @@
 						<button class="flex-c-m trans-04">
 							<i class="zmdi zmdi-search"></i>
 						</button>
-						<input class="plh3" type="text" name="search" placeholder="Search...">
+						<input class="plh3" type="text" name="search" placeholder="pesquisar...">
 					</form>
 				</div>
 			</div>
@@ -218,7 +205,7 @@
 		<div class="header-cart flex-col-l p-l-65 p-r-25">
 			<div class="header-cart-title flex-w flex-sb-m p-b-8">
 				<span class="mtext-103 cl2">
-					Confirmar Venda
+					Compras resentes
 				</span>
 
 				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
@@ -228,36 +215,50 @@
 
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
-					
-
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="{{asset('images/perfil/perfil.jpg')}}" width="50" height="80" alt="IMG">
+							<img src="images/user.jpg" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Armando Katito
+								ADRIANO PAULOS
 							</a>
 
 							<span class="header-cart-item-info">
-								<i class="badge">7</i> Produtos
+								<a href="">Aprovar a compra</a>
 							</span>
 						</div>
 					</li>
 
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="{{asset('images/perfil/perfil.jpg')}}" width="50" height="80" alt="IMG">
+							<img src="images/user.jpg" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
+								ARMANDO KATITO
 							</a>
 
 							<span class="header-cart-item-info">
-								<i class="badge">9</i> Produtos
+								<a href="">Aprovar a compra</a>
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/user.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								HUMBERTO FORTES
+							</a>
+
+							<span class="header-cart-item-info">
+								<a href="">Aprovar a compra</a>
 							</span>
 						</div>
 					</li>
@@ -265,36 +266,34 @@
 
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total da venda: 7555.00 Kz
+						Total: 75.00 kzs
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							Todas
+							Ver todas compras
 						</a>
 
-						<a href="" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Voltar
-						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container principal">
 			<div class="row tudo">
 				<div class="col-sm-2 col-xs-2 col-md-2 col-lg-2">
-					<div class="menu-sidebar how-shadow1">
+					<div class=" menu-sidebar how-shadow1">
 						<div class="cabeca">
 							<i class="fa fa-tachometer"></i>
 							<h3> Panei de Controle </h3>
 						</div>
 						<div class="corpo">
 							<ul class="nav">
-									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
+									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}s"> Produtos <span class="badge">43</span></a></li>
 									<li><i class="icon fa fa-list-ol"></i><a href="categorias.html"> Categorias <span class="badge badge-danger">5</span></a></li>
 									<li><i class="icon fa fa-group"></i><a href="funcionarios.html"> Funcionarios <span class="badge badge-danger">8</span></a></li>
 									<li><i class="icon fa fa-gift"></i><a href="encomendas.html"> Encomendas <span class="badge badge-danger">15</span> </a></li>
@@ -307,21 +306,9 @@
 						</div><!-- ./ roda-pe -->
 					</div><!-- ./ menu side-bar -->
 				</div>
-				<div class="col-sm-10 col-xs-10 col-md-10 col-lg-10 head-func" >
-					
-					@if(Session::has('flash_message'))
-					<div class="container">      
-						<div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
-						</div>
-					</div>
-					@endif
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">              
-							@include ('erros.listar') {{-- Including error file --}}
-						</div>
-					</div>
+				<div class="col-sm-10 col-xs-10 col-md-10 col-lg-10" >
 					@yield('principal')
-			</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -456,15 +443,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 
 	
 <!--===============================================================================================-->
-	<script src="{{asset('js/app.js')}}"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	<script src="{{asset('vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('vendor/animsition/js/animsition.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('vendor/select2/select2.min.js')}}"></script>
-	
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -475,12 +461,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 	</script>
 <!--===============================================================================================-->
 	<script src="{{asset('vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
+	<script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}s"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('vendor/slick/slick.min.js')}}"></script>
 	<script src="{{asset('js/slick-custom.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('vendor/parallax100/parallax100.js')}}"></script>
+	<script src="vendor/parallax100/parallax100.js"></script>
 	<script>
         $('.parallax100').parallax100();
 	</script>
@@ -557,6 +543,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 	</script>
 <!--===============================================================================================-->
 	<script src="{{asset('js/main.js')}}"></script>
- 	@yield('footer')
+    @yield('footer')
+
 </body>
 </html>
