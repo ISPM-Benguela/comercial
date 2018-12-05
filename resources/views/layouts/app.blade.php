@@ -61,8 +61,9 @@
 							</a>
 	
 							<a href="#" class="flex-c-m trans-04 p-lr-25">
-								Tandavala ( <span>Administrador</span>)
+								Zacarias ( <span>Administrador</span>)
 							</a>
+							<a class="flex-c-m trans-04 p-lr-25" href="{{route('logout')}}">Sair</a>
 						
 						</div>
 					</div>
@@ -301,7 +302,7 @@
 											<li><a href="">Acessorios</a></li>
 										</ul>
 									</li>
-									<li><i class="icon fa fa-group"></i><a href="#"> Aprovar  vendas</a></li>
+									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
 									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
 									<li><i class="icon fa fa-feed"></i><a href="#"> Notificações <span class="badge badge-danger">15</span></a></li>
 									<li><i class="icon fa fa-gears"></i><a href="#s"> Configurações </a></li>

@@ -42,6 +42,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('previlegios', 'PrevilegioController');
 
         Route::resource('encomendas', 'EncomendaController');
+
+        Route::resource('vendas', 'VendaController');
        #s Route::resource('produtos', 'ProdutoController');
 
         });
@@ -50,6 +52,11 @@ Route::group(["middleware" => "auth"], function(){
 // Paginas cliente com produtos
 
 Route::resource('produtos', 'ProdutoController');
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('/');
+});
 
 Route::resource('categorias', 'ProdutoController');
 Auth::routes();

@@ -5,7 +5,7 @@
 @stop
 
 @section('principal')
-<h1><i class='fa fa-user-plus'></i> Cadastrar usuario</h1>
+<h1><i class='fa fa-user-plus'></i> Cadastrar Funcionário</h1>
 <hr>
 
 <form method="post" action="{{ route('usuarios.store') }}" class="form-horizontal form-label-left">
