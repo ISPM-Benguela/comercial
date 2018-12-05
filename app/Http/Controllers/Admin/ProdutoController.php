@@ -4,6 +4,8 @@ namespace Comercio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
+use Comercio\Categoria;
+use Comercio\Produto;
 
 class ProdutoController extends Controller
 {
@@ -14,7 +16,30 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+
+   
+        $params = [
+            'titulo' => 'Produtos'
+        ];
+        /*
+        $product = new Produto;
+        $product->nome = 'God of War';
+        $product->descricao = "BOm produto";
+        $product->preco = "23.3";
+        $product->stock = "23";
+        
+        $product->save();
+
+        $category = Categoria::find([1, 2]);
+        $product->categorias()->attach($category);
+
+        return 'Success';*/
+
+        
+
+        return view('produtos.index')->with([
+            'params' => $params
+        ]);
     }
 
     /**
@@ -24,7 +49,13 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $params = [
+            'titulo' => 'Produtos'
+        ];
+
+        return view('produtos.create')->with([
+            'params' => $params
+        ]);
     }
 
     /**
