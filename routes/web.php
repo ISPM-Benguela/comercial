@@ -40,13 +40,14 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('nivel', 'NivelController');
 
         Route::resource('previlegios', 'PrevilegioController');
+        Route::resource('produtos', 'ProdutoController');
 
         });
 });
 
 // Paginas cliente com produtos
 
-Route::resource('produtos', 'ProdutoController');
+
 
 Route::resource('categorias', 'ProdutoController');
 Auth::routes();
