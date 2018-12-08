@@ -290,7 +290,7 @@
 					<div class=" menu-sidebar how-shadow1">
 						<div class="cabeca">
 							<i class="fa fa-tachometer"></i>
-							<h3> Panei de Controle </h3>
+							<h3 style="font-size: 16px;  font-weight: bold; "> Painel de Controle </h3>
 						</div>
 						<div class="corpo">
 							<ul class="nav">
