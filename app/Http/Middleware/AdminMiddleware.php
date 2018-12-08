@@ -19,7 +19,7 @@ class AdminMiddleware
     {
         $user = User::all()->count();
         if(!$user == 1){
-            if(!Auth::user()->hasPermissionTo('area restrita'))
+            if(!Auth::user()->hasPermissionTo('restrito'))
             {
                 abort('401');
             }
