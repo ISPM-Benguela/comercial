@@ -1,0 +1,34 @@
+.super_container .cabeca .top_nav .container .top_nav_right .top_nav_menu  .imagem img {
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    height: inherit;
+}
+.main_slider .fill_height {
+    margin-top: -10%;
+}
+.main_slider .fill_height .categoria {
+    background: #c7ccd6;
+    padding: 10px;
+    height: 300px;
+    border-radius: 10px;
+}
+.main_slider .fill_height .categoria h3 {
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #fff;
+}
+.main_slider .fill_height .categoria ul li a {
+    color: #fff;
+    margin-top: 90x;
+}
+.main_slider .fill_height .carouseli {
+    
+}
+.main_slider {
+    border-bottom: 1px solid #ccc;
+}
+.main_slider .fill_height .carouseli  .carousel .carousel-indicators li .active {
+    background-color: red;
+}

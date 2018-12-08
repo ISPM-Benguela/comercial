@@ -18,11 +18,8 @@ Auth::routes();
 
 
 // paginas inicio
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
@@ -44,6 +41,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('encomendas', 'EncomendaController');
 
         Route::resource('vendas', 'VendaController');
+
+        Route::get('inicio', 'HomeController@inicio')->name('inicio');
        #s Route::resource('produtos', 'ProdutoController');
 
         });

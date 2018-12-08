@@ -15,7 +15,7 @@
   <div class="produtos">
      <h3><i class="fa fa-shopping-basket"></i> Produtos em destaque</h3>
          <br />
-        <a href="{{ route('produtos.create')}}" class="btn btn-primary" ><i class="fa fa-plus"></i> Cadastrar produto</a>
+        
      <div class="container produtos-cabeca">
        <div class="row">
          <div class="owl-carousel owl-them">
