@@ -60,7 +60,7 @@
 
 						@else 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							{{ Auth::user()->name }}
+							{{ Auth::user()->perfil['nome'] }}
 						</a>
 
 						<a href="{{route('inicio')}}" class="flex-c-m trans-04 p-lr-25">
