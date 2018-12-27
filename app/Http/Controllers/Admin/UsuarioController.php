@@ -7,6 +7,7 @@ use Comercio\Http\Controllers\Controller;
 
 use Comercio\User;
 use Auth;
+use Comercio\Perfil;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -62,8 +63,14 @@ class UsuarioController extends Controller
         ]);
 
         $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
-
         $nivel = $request['nivel']; //Retrieving the roles field
+
+        $perfil = new Perfil;
+        $perfil->tipo = 'Operador';
+
+        $user->perfil()->save($perfil);
+
+       
         //Checking if a role was selected
         if (isset($nivel)) {
 

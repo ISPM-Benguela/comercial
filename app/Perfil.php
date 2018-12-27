@@ -8,6 +8,13 @@ use Comercio\User;
 
 class Perfil extends Model
 {
+    protected $fillable = [
+        'nome',
+        'provincia',
+        'tipo',
+        'user_id',
+    ];
+
     protected $table = "perfils";
     public $timestamps = false;
     protected $guarded = [];
