@@ -187,6 +187,9 @@
 
 						@else 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							<img src="{{asset('storage')}}/{{ Auth::user()->perfil['imagem'] }}" width="50" height="50" />
+						</a>
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							{{ Auth::user()->name }}
 						</a>
 

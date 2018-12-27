@@ -19,6 +19,7 @@ class CreatePerfilsTable extends Migration
             $table->string('email')->nullable();
             $table->string('provincia')->nullable();
             $table->string('tipo')->nullable();
+            $table->string('imagem')->default('Perfil/default.jpg');
             $table->integer("user_id")->unsigned();
             $table->timestamps();
 
