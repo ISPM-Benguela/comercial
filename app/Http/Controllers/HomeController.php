@@ -3,6 +3,7 @@
 namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Comercio\Categoria;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $params = [
+            'categorias' => Categoria::all(),
+        ];
+        return view('pages.index')->with($params);
     }
 }
