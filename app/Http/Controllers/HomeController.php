@@ -4,6 +4,7 @@ namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Comercio\Categoria;
+use Comercio\Carousel;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,7 @@ class HomeController extends Controller
     {
         $params = [
             'categorias' => Categoria::all(),
+            'carousel' => Carousel::all(),
         ];
         return view('pages.index')->with($params);
     }
