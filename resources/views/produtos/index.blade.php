@@ -18,7 +18,7 @@
       <a href="{{route('produtos.create')}}" type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Cadastrar produto</a>  
      <div class="container produtos-cabeca">
        <div class="row">
-         <div class="owl-carousel owl-them">
+         <div class="owl-carousel produto owl-them">
            <div class="item thumbnail">
              <img src="images/produtos/product01.png" width="600" height="600" />
              <div class="caption">

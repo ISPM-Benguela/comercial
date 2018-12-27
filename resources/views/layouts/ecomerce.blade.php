@@ -1,753 +1,748 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Colo Shop</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Colo Shop Template">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap4/bootstrap.min.css')}}">
-<link href="{{asset('css/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{asset('css/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/plugins/OwlCarousel2-2.2.1/animate.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/main_styles.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}">
+	<title>@yi</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
-
-<body>
-
-<div class="super_container">
-
+<body class="animsition">
+	
 	<!-- Header -->
-
-	<header class="header trans_300 cabeca">
-
-		<!-- Top Navigation -->
-
-		<div class="top_nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="top_nav_left"></div>
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
 					</div>
-					<div class="col-md-6 text-right">
-						<div class="top_nav_right">
-							<ul class="top_nav_menu">
 
-								<!-- Currency / Language / My Account -->
+					<div class="right-top-bar flex-w h-full">
+					   @guest
 
-								<li class="language imagem">
-									<img src="{{asset('images/user.jpg')}}" />
-                                </li>
-                                @guest
-								<li class="account">
-									<a href="#">
-										Minha conta
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="account_selection">
-										<li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Entrar</a></li>
-										<li><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registar</a></li>
-									</ul>
-                                </li>
-                                @else
-                                <li class="language"><a href="">{{ Auth::user()->name }}</a></li>
-                                <li class="language"><a href="{{route('inicio')}}">Painel de controle</a></li>
-                                <li class="account">
-									<a href="#">
-										Minha conta
-										<i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="account_selection">
-										<li><a href="{{route('produtos.index')}}"><i class="fa-dashboard" aria-hidden="true"></i>Painel de controle</a></li>
-										<li><a href="{{route('logout')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Sair</a></li>
-									</ul>
-                                </li>
-                                @endguest
-							</ul>
-						</div>
+						<a href="{{route('login')}}" class="flex-c-m trans-04 p-lr-25">
+							Entrar
+						</a>
+
+						<a href="{{route('register')}}" class="flex-c-m trans-04 p-lr-25">
+							Registar - se
+						</a>
+
+						@else 
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							{{ Auth::user()->name }}
+						</a>
+
+						<a href="{{route('inicio')}}" class="flex-c-m trans-04 p-lr-25">
+							painel de controle
+						</a>
+
+						<a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-25">
+							Sair
+						</a>
+						@endif
 					</div>
 				</div>
 			</div>
+
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+					
+					<!-- Logo desktop -->		
+					<a href="#" class="logo">
+						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+									<a href="product.html">Inicio</a>
+							</li>
+
+							<li class="active-menu">
+								<a href="">Categoria</a>
+								<ul class="sub-menu">
+									<li><a href="index.html">Homepage 1</a></li>
+									<li><a href="home-02.html">Homepage 2</a></li>
+									<li><a href="home-03.html">Homepage 3</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="product.html">Sobre - nós</a>
+							</li>
+
+							<li  >
+								<a href="shoping-cart.html">Nossos serviços</a>
+							</li>
+							<li>
+								<a href="about.html">Ajuda</a>
+							</li>
+
+							<li>
+								<a href="contact.html">Contactos</a>
+							</li>
+						</ul>
+					</div>	
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
+
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a>
+					</div>
+				</nav>
+			</div>	
 		</div>
 
-		<!-- Main Navigation -->
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
 
-		<div class="main_nav_container">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-right">
-						<div class="logo_container">
-							<img src="{{asset('images/icons/logo-01.png')}}" width="100" />
-						</div>
-						<nav class="navbar">
-							<ul class="navbar_menu">
-								<li><a href="#">Inicio</a></li>
-								<li><a href="#">Sobre</a></li>
-								<li><a href="#">Contacto</a></li>
-								<li><a href="#">Ajuda</a></li>
-							</ul>
-							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								<li class="checkout">
-									<a href="#">
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<span id="checkout_items" class="checkout_items">2</span>
-									</a>
-								</li>
-							</ul>
-							<div class="hamburger_container">
-								<i class="fa fa-bars" aria-hidden="true"></i>
-							</div>
-						</nav>
-					</div>
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
 				</div>
+
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
+
+				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+					<i class="zmdi zmdi-favorite-outline"></i>
+				</a>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
 			</div>
 		</div>
 
-	</header>
 
-	<div class="fs_menu_overlay"></div>
-	<div class="hamburger_menu">
-		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-		<div class="hamburger_menu_content text-right">
-			<ul class="menu_top_nav">
-				<li class="menu_item has-children">
-					<a href="#">
-						usd
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">cad</a></li>
-						<li><a href="#">aud</a></li>
-						<li><a href="#">eur</a></li>
-						<li><a href="#">gbp</a></li>
-					</ul>
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="topbar-mobile">
+				<li>
+					<div class="left-top-bar">
+					</div>
 				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						English
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">French</a></li>
-						<li><a href="#">Italian</a></li>
-						<li><a href="#">German</a></li>
-						<li><a href="#">Spanish</a></li>
-					</ul>
+
+				<li>
+					<div class="right-top-bar flex-w h-full">
+						@guest
+
+						<a href="{{route('login')}}" class="flex-c-m trans-04 p-lr-25">
+							Entrar
+						</a>
+
+						<a href="{{route('register')}}" class="flex-c-m trans-04 p-lr-25">
+							Registar - se
+						</a>
+
+						@else 
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							{{ Auth::user()->name }}
+						</a>
+
+						<a href="{{route('inicio')}}" class="flex-c-m trans-04 p-lr-25">
+							painel de controle
+						</a>
+
+						<a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-25">
+							Sair
+						</a>
+						@endif
+					</div>
 				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						My Account
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+			</ul>
+
+			<ul class="main-menu-m">
+				<li>
+					<li>
+						<a href="product.html">Inicio</a>
+					</li>
+					<a href="index.html">Categorias</a>
+					<ul class="sub-menu-m">
+						<li><a href="index.html">Homepage 1</a></li>
+						<li><a href="home-02.html">Homepage 2</a></li>
+						<li><a href="home-03.html">Homepage 3</a></li>
 					</ul>
+
+				<li>
+					<a href="shoping-cart.html">Nossos Serviços</a>
 				</li>
-				<li class="menu_item"><a href="#">home</a></li>
-				<li class="menu_item"><a href="#">shop</a></li>
-				<li class="menu_item"><a href="#">promotion</a></li>
-				<li class="menu_item"><a href="#">pages</a></li>
-				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
+
+				<li>
+					<a href="about.html">Sobre nós</a>
+				</li>
+
+				<li>
+					<a href="contact.html">Contactos</a>
+				</li>
 			</ul>
 		</div>
-	</div>
 
-	<!-- Slider -->
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
 
-	<div class="main_slider">
-		<div class="container fill_height">
-			<div class="row align-items-center fill_height">
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<!-- Cart -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					teu carrinho
+				</span>
+
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
+				</div>
+			</div>
 			
-				<div class="col-md-8">
-					<div class="main_slider_content carouseli">
-						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-								<img class="d-block w-100" src="{{asset('images/produtos1/product01.png')}}" alt="First slide">
-								<div class="carousel-caption d-none d-md-block">
-									<h5>Nome do Produto</h5>
-									<p>Preco do produto</p>
-									 <button type="submit" class="btn btn-primary">Comprar</button>
-								</div>
-								</div>
-								<div class="carousel-item">
-								<img class="d-block w-100" src="images/produtos1/product02.png" alt="Second slide">
-								<div class="carousel-caption d-none d-md-block">
-									<h5>Nome do Produto</h5>
-									<p>Preco do produto</p>
-									 <button type="submit" class="btn btn-primary">Comprar</button>
-								</div>
-								</div>
-								<div class="carousel-item">
-								<img class="d-block w-100" src="images/produtos1/product03.png" alt="Third slide">
-								<div class="carousel-caption d-none d-md-block">
-									<h5>Nome do Produto</h5>
-									<p>Preco do produto</p>
-									 <button type="submit" class="btn btn-primary">Comprar</button>
-								</div>
-								</div>
-							</div>
-							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
+			<div class="header-cart-content flex-w js-pscroll">
+				<ul class="header-cart-wrapitem w-full">
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-01.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								White Shirt Pleat
 							</a>
-							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
+
+							<span class="header-cart-item-info">
+								1 x $19.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-02.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Converse All Star
 							</a>
-							</div>
+
+							<span class="header-cart-item-info">
+								1 x $39.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-03.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Nixon Porter Leather
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $17.00
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="w-full">
+					<div class="header-cart-total w-full p-tb-40">
+						Total: $75.00
 					</div>
-					
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="categoria">
-						<h3>categorias</h3>
 
-						<ul>
-							<li><a href="">Electro Domestico</a></li>
-							<li><a href="">Computadores</a></li>
-							<li><a href="">Telefones</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+					<div class="header-cart-buttons flex-w w-full">
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							View Cart
+						</a>
 
-  
-	<!-- New Arrivals -->
-
-	<div class="new_arrivals">
-		<div class="container fill_height">
-			<div class="row align-items-center fill_height">
-				<div class="col text-center">
-					<div class="section_title new_arrivals_title">
-						<h2>Produtos Novo</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
-						<!-- Product 1 -->
-
-						<div class="product-item men">
-							<div class="product discount product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product01.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 2 -->
-
-						<div class="product-item women">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product03.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 3 -->
-
-						<div class="product-item women">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product04.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 4 -->
-
-						<div class="product-item accessories">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product09.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 5 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product02.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 6 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product07.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 7 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product06.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 8 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product09.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 9 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product07.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
-
-						<!-- Product 10 -->
-
-						<div class="product-item women men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="images/produtos1/product07.png" alt="">
-								</div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">NoteBoo HP 2000</a></h6>
-									<div class="product_price">123.000 Kz</div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">Adicionar ao carrinho</a></div>
-						</div>
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							Check Out
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Deal of the week -->
-
-	<div class="deal_ofthe_week">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-6">
-					<div class="deal_ofthe_week_img">
-						<img src="images/deal_ofthe_week.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-6 text-right deal_ofthe_week_col">
-					<div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
-						<div class="section_title">
-							<h2>Conheças as nossas soluções</h2>
-						</div>
-						<ul class="timer">
-							<li class="d-inline-flex flex-column justify-content-center align-items-center">
-								<div id="day" class="timer_num">20</div>
-								<div class="">Clientes</div>
-							</li>
-							<li class="d-inline-flex flex-column justify-content-center align-items-center">
-								<div id="hour" class="timer_num">4</div>
-								<div class="timer_unit">Categorias</div>
-							</li>
-							<li class="d-inline-flex flex-column justify-content-center align-items-center">
-								<div id="minute" class="timer_num">59</div>
-								<div class="">produtos</div>
-							</li>
-						</ul>
-						<div class="red_button deal_ofthe_week_button"><a href="#">Saber mais</a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Best Sellers -->
-
-	<div class="best_sellers">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_title new_arrivals_title">
-						<h2>Produtos Mais vendidos</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="product_slider_container">
-						<div class="owl-carousel owl-theme product_slider">
-
-							<!-- Slide 1 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item">
-									<div class="product discount">
-										<div class="product_image">
-											<img src="{{asset('images/produtos1/product02.png')}}" alt="">
-										</div>
-										<div class="favorite favorite_left"></div>
-										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>Pro</span></div>
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">HeadPhone Bluetooths</a></h6>
-											<div class="product_price">220.00 Kz<span>590.00 Kz</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 2 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product08.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 3 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product09.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 4 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product04.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div><
-
-							<!-- Slide 5 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product06.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 6 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product06.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Slide 7 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product06.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 8 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product06.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Slide 9 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item women">
-									<div class="product">
-										<div class="product_image">
-											<img src="images/produtos1/product06.png" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Slide 10 -->
-
-							<div class="owl-item product_slider_item">
-								<div class="product-item men">
-									<div class="product">
-										<div class="product_image">
-											<img src="{{asset('images/produtos1/product06.png')}}" alt="">
-										</div>
-										<div class="favorite"></div>
-								
-										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">NoteBok Asus</a></h6>
-											<div class="product_price">610.000 Kz</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Slider Navigation -->
-
-						<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-							<i class="fa fa-chevron-left" aria-hidden="true"></i>
-						</div>
-						<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-							<i class="fa fa-chevron-right" aria-hidden="true"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Benefit -->
-
-	<div class="benefit">
-		<div class="container">
-		<div class="col text-center" style="padding-bottom: 10%;">
-					<div class="section_title new_arrivals_title">
-						<h2>Marcas vendidos</h2>
-					</div>
-				</div>
-			<div class="row benefit_row">
-			
-					
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 benefit_col" style="background: #fff;">
-					<div class=" d-flex flex-row align-items-center">
-						<img src="images/multichoices.jpeg" width="100" height="100" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 benefit_col">
-					<div class=" d-flex flex-row align-items-center">
-						<img src="images/samsumg.png" width="100" height="100" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 benefit_col">
-					<div class=" d-flex flex-row align-items-center">
-						<img src="images/dell.png" width="100" height="100" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 benefit_col">
-					<div class=" d-flex flex-row align-items-center">
-						<img src="images/hp.jpeg" width="100" height="100" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+		
+    
+	@yield('principal')
 	
 
-	<!-- Newsletter -->
-
-	<div class="newsletter">
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-						<h4>Quero receber novidades</h4>
-						<p>Informe o teu email para receberes as nossas novidades assim que chegares</p>
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Women
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Men
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shoes
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Watches
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Help
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Track Order
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Returns 
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shipping
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								FAQs
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						GET IN TOUCH
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					</p>
+
+					<div class="p-t-27">
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-pinterest-p"></i>
+						</a>
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<form action="post">
-						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-							<input id="newsletter_email" type="email" placeholder="teu email" required="required" data-error="Valid email is required.">
-							<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Submeter</button>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Newsletter
+					</h4>
+
+					<form>
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Subscribe
+							</button>
 						</div>
 					</form>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<!-- Footer -->
+			<div class="p-t-40">
+				<div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
 
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-						<ul class="footer_nav">
-							<li><a href="#">produtos1</a></li>
-							<li><a href="#">Ajuda</a></li>
-							<li><a href="contact.html">Contactos</a></li>
-						</ul>
-					</div>
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
 				</div>
-				<div class="col-lg-6">
-					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-						<ul>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="footer_nav_container">
-						<div class="cr">©2018 todo direito reservado. Desenvolvido por <a href="#">Zacarias</a></div>
-					</div>
-				</div>
+
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
 			</div>
 		</div>
 	</footer>
 
-</div>
 
-<script src="{{asset('vendor/jquery/jquery-3.2.1.min.js')}}"></script>
-<script src="{{asset('css/bootstrap4/popper.js')}}"></script>
-<script src="{{asset('css/bootstrap4/bootstrap.min.js')}}"></script>
-<script src="{{asset('css/plugins/Isotope/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('css/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
-<script src="{{asset('css/plugins/easing/easing.js')}}"></script>
-<script src="{{asset('css/js/custom.js')}}"></script>
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<!-- Modal1 -->
+	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+		<div class="overlay-modal1 js-hide-modal1"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
+					<img src="images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Lightweight Jacket
+							</h4>
+
+							<span class="mtext-106 cl2">
+								$58.79
+							</span>
+
+							<p class="stext-102 cl3 p-t-23">
+								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+							</p>
+							
+							<!--  -->
+							<div class="p-t-33">
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-203 flex-c-m respon6">
+										Size
+									</div>
+
+									<div class="size-204 respon6-next">
+										<div class="rs1-select2 bor8 bg0">
+											<select class="js-select2" name="time">
+												<option>Choose an option</option>
+												<option>Size S</option>
+												<option>Size M</option>
+												<option>Size L</option>
+												<option>Size XL</option>
+											</select>
+											<div class="dropDownSelect2"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-203 flex-c-m respon6">
+										Color
+									</div>
+
+									<div class="size-204 respon6-next">
+										<div class="rs1-select2 bor8 bg0">
+											<select class="js-select2" name="time">
+												<option>Choose an option</option>
+												<option>Red</option>
+												<option>Blue</option>
+												<option>White</option>
+												<option>Grey</option>
+											</select>
+											<div class="dropDownSelect2"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-204 flex-w flex-m respon6-next">
+										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
+											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+												<i class="fs-16 zmdi zmdi-minus"></i>
+											</div>
+
+											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
+
+											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+												<i class="fs-16 zmdi zmdi-plus"></i>
+											</div>
+										</div>
+
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+											Add to cart
+										</button>
+									</div>
+								</div>	
+							</div>
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+								<div class="flex-m bor9 p-r-10 m-r-11">
+									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
+										<i class="zmdi zmdi-favorite"></i>
+									</a>
+								</div>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/slick/slick.min.js"></script>
+	<script src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
-
 </html>
