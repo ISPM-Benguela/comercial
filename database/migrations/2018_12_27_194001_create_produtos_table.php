@@ -15,7 +15,16 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('categoria_id')->unsigned();
+            $table->string('nome');
+            $table->text('descricao');
+            $table->float('preco');
+            $table->integer('stock');
+            $table->boolean('promocao')->default(false);
+            $table->float('novo_preco')->nullable();
             $table->timestamps();
+
+            $table->foreign('categoria_id')->references('id')->on('categorias');
         });
     }
 
