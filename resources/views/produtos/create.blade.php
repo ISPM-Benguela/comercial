@@ -15,62 +15,68 @@
      
      </div>
      <div class="produtos-corpo">
-     <form method="post" action="{{ route('produtos.store') }}" data-parsley-validate class="form-horizontal form-label-left">
+     <form method="post" action="{{ route('produtos.store') }}" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
 
-<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
     <label for="">Nome do Produto</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="text" value="{{ Request::old('name') ?: '' }}" id="name" placeholder="Informar o nome do produto" name="name" class="form-control col-md-8 col-xs-12">
-        @if ($errors->has('name'))
-        <span class="help-block">{{ $errors->first('name') }}</span>
+        <input type="text" value="{{ Request::old('nome') ?: '' }}" id="nome" placeholder="Informar o nome do produto" name="nome" class="form-control col-md-8 col-xs-12">
+        @if ($errors->has('nome'))
+         <span class="help-block">{{ $errors->first('nome') }}</span>
         @endif
     </div>
 </div>
-<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('imagem') ? ' has-error' : '' }}">
     <label for="">Carregar Imagem</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="file" value="{{ Request::old('name') ?: '' }}" id="name"  name="name" class="form-control col-md-8 col-xs-12">
-        @if ($errors->has('name'))
-        <span class="help-block">{{ $errors->first('name') }}</span>
+        <input type="file" value="{{ Request::old('imagem') ?: '' }}" id="imagem"  name="imagem" class="form-control col-md-8 col-xs-12">
+        @if ($errors->has('imagem'))
+        <span class="help-block">{{ $errors->first('imagem') }}</span>
         @endif
     </div>
 </div>
-<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('preco') ? ' has-error' : '' }}">
     <label for="">Preco</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="text" value="{{ Request::old('name') ?: '' }}" id="name" placeholder="Informar o nome do produto" name="name" class="form-control col-md-8 col-xs-12">
-        @if ($errors->has('name'))
-        <span class="help-block">{{ $errors->first('name') }}</span>
+        <input type="text" value="{{ Request::old('preco') ?: '' }}" id="preco" placeholder="Informar o nome do produto" name="preco" class="form-control col-md-8 col-xs-12">
+        @if ($errors->has('preco'))
+        <span class="help-block">{{ $errors->first('preco') }}</span>
         @endif
     </div>
 </div>
-<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('stock') ? ' has-error' : '' }}">
     <label for="">Estoque</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="number" value="{{ Request::old('name') ?: '' }}" id="name" placeholder="Informar o nome do produto" name="name" class="form-control col-md-8 col-xs-12">
-        @if ($errors->has('name'))
-        <span class="help-block">{{ $errors->first('name') }}</span>
+        <input type="number" value="{{ Request::old('stock') ?: '' }}" id="stock" placeholder="Informar o nome do produto" name="stock" class="form-control col-md-8 col-xs-12">
+        @if ($errors->has('stock'))
+        <span class="help-block">{{ $errors->first('stock') }}</span>
         @endif
     </div>
 </div>
-<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
     <label for="">Categoria</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <select  id="description" name="description" class="form-control col-md-7 col-xs-12">
+    
+       
+        <select  id="categoria" name="categoria" class="form-control col-md-7 col-xs-12">
             <option>--- Selecionar categoria ---</option>
+            @foreach($categorias as $categoria)
+            <option value="{{ $categoria->id }}">{{ $categoria->id }}</option>
+        
+            @endforeach
         </select>
-        @if ($errors->has('description'))
-        <span class="help-block">{{ $errors->first('description') }}</span>
+        @if ($errors->has('categoria'))
+        <span class="help-block">{{ $errors->first('categoria') }}</span>
         @endif
     </div>
 </div>
 
-<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
 <label for="">Descricao</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="text" value="{{ Request::old('description') ?: '' }}" id="description" name="description" class="form-control col-md-7 col-xs-12">
-        @if ($errors->has('description'))
-        <span class="help-block">{{ $errors->first('description') }}</span>
+        <textarea  value="{{ Request::old('descricao') ?: '' }}" id="description" name="descricao" class="form-control col-md-7 col-xs-12"></textarea>
+        @if ($errors->has('descricao'))
+        <span class="help-block">{{ $errors->first('descricao') }}</span>
         @endif
     </div>
 </div>

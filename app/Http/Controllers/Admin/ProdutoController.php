@@ -17,7 +17,6 @@ class ProdutoController extends Controller
     public function index()
     {
 
-   
         $params = [
             'titulo' => 'Produtos'
         ];
@@ -50,12 +49,11 @@ class ProdutoController extends Controller
     public function create()
     {
         $params = [
-            'titulo' => 'Produtos'
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
         ];
 
-        return view('produtos.create')->with([
-            'params' => $params
-        ]);
+        return view('produtos.create')->with($params);
     }
 
     /**
@@ -66,7 +64,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

@@ -43,14 +43,14 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('vendas', 'VendaController');
 
         Route::get('inicio', 'HomeController@inicio')->name('inicio');
-       #s Route::resource('produtos', 'ProdutoController');
+       Route::resource('produto', 'ProdutoController');
 
         });
 });
 
 // Paginas cliente com produtos
 
-Route::resource('produtos', 'ProdutoController');
+ Route::resource('produtos', 'ProdutoController');
 
 Route::get('/logout', function(){
     Auth::logout();

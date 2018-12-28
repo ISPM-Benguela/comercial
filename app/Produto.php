@@ -14,6 +14,7 @@ class Produto extends Model
         'preco',
         'stock',
         'promocao',
+        'imagem',
         'novo_preco',
     ];
 

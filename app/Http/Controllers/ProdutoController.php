@@ -49,11 +49,13 @@ class ProdutoController extends Controller
     public function create()
     {
         $params = [
-            'titulo' => 'Produtos'
+            'titulo' => 'Produtos',
+            
         ];
 
         return view('produtos.create')->with([
-            'params' => $params
+            'params' => $params,
+            'categorias' => Categoria::all(),
         ]);
     }
 
@@ -65,7 +67,49 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nomeFile = null;
+        $upload = null;
+
+        $this->validate($request, [
+            'nome' => 'required|string',
+            'descricao' => 'required',
+            'imagem' => 'required',
+            'preco' => 'required',
+            'stock' => 'required',
+        ]);
+
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+
+            $nome = uniqid(date('HisYmd'));
+
+            $extensao = $request->file('imagem')->extension();
+
+            $nameFile = "{$nome}.{$extensao}";
+
+            $upload = $request->file('imagem')->storeAs('Produtos', $nameFile);
+
+            if(!$upload )
+            {
+                return redirect()
+                    ->route('produtos.create')
+                    ->with('error','Falha ao fazer upload');
+            }
+        }
+
+       
+        
+        $categoria = Categoria::find($request->input('categoria'));
+
+        $produto = Produto::create([
+            'nome' => $request->input('nome'),
+            'categoria_id' => $request->input('categoria'),
+            'descricao' => $request->input('descricao'),
+            'imagem' => $upload,
+            'preco' => $request->input('preco'),
+            'stock' => $request->input('preco'),
+        ]);
+
+        return redirect()->route('produtos')->with('Produto cadastrado com sucesso');
     }
 
     /**
