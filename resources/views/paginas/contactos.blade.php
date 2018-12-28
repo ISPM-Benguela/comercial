@@ -15,30 +15,41 @@
 	<!-- Content page -->
 	<section class="bg0 p-t-104 p-b-116">
 		<div class="container">
-		 <label class="alert alert-success">mensagem enviada com sucesso</label>
+
+		@if (Session::has('success'))
+			<div class="clearfix"></div>
+			<div class="alert alert-success" role="alert">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				{!! Session::get('success') !!}
+			</div>
+			@endif
+		 
 			<div class="flex-w flex-tr">
 			  
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form action="{{ route('enviar') }}" method="POST">
+					 
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
 							Envia - nos uma mensagem
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent {{ $errors->has('email') ? ' has-error' : '' }}">
-							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
+							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Email">
 							<img class="how-pos4 pointer-none" value="{{ Request::old('email') ?: '' }}" src="images/icons/icon-email.png" alt="ICON">
-							@if ($errors->has('email'))
-                                <span class="help-block">{{ $errors->first('email') }}</span>
-                            @endif
+							
 						</div>
+						@if ($errors->has('email'))
+                                <span class="help-block" style="color: red;">{{ $errors->first('email') }}</span>
+                            @endif
 
 						<div class="bor8 m-b-30 {{ $errors->has('mensagem') ? ' has-error' : '' }}">
-							<textarea value="{{ Request::old('email') ?: '' }}" class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="mensagem" placeholder="How Can We Help?"></textarea>
-							@if ($errors->has('mensagem'))
-                                <span class="help-block">{{ $errors->first('mensagem') }}</span>
-                            @endif
+							<textarea value="{{ Request::old('mensagem') ?: '' }}" class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="mensagem" placeholder="Mensagems"></textarea>
+							
 						</div>
-
+						@if ($errors->has('mensagem'))
+                                <span class="help-block" style="color: red;">{{ $errors->first('mensagem') }}</span>
+                            @endif
+						<input type="hidden" name="_token" value="{{ Session::token() }}">
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
 							Enviar
 						</button>

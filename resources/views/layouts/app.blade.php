@@ -305,7 +305,7 @@
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
 									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
 									<li><i class="icon fa fa-feed"></i><a href="#"> Notificações <span class="badge badge-danger">15</span></a></li>
-									<li><i class="icon fa fa-gears"></i><a href="#s"> Configurações </a></li>
+									<li><i class="icon fa fa-gears"></i><a href="{{ route('carousel.index')}}"> Carousel </a></li>
 							</ul>
 						</div>
 						<div class="roda-pe">

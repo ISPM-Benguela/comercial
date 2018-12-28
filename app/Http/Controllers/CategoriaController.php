@@ -1,14 +1,12 @@
 <?php
 
-namespace Comercio\Http\Controllers\Admin;
+namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Comercio\Http\Controllers\Controller;
-use Comercio\Categoria;
 use Comercio\Produto;
-use Comercio\Carousel;
+use Comercio\Categoria;
 
-class CarouselController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +15,7 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        $params = [
-            'produtos' => Produto::all(),
-            'categorias' => Categoria::all(),
-            'carousel' => Carousel::all(),
-        ];
-        return view('admin.carousel.index')->with($params);
+        
     }
 
     /**
@@ -65,7 +58,13 @@ class CarouselController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        
+        $params = [
+            'categorias' => Categoria::find(),
+            'categoria' => $categoria,
+        ];
+        return view('paginas.categoria')->with($params);
     }
 
     /**

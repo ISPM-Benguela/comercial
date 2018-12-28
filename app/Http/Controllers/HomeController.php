@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Comercio\Categoria;
 use Comercio\Produto;
 use Comercio\Carousel;
+use Comercio\Contacto;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,7 @@ class HomeController extends Controller
         $params = [
             'categorias' => Categoria::all(),
             'carousel' => Carousel::all(),
-            'produtos' => Produto::all(),
+            'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
         ];
         return view('paginas.index')->with($params);
     }
@@ -54,6 +55,30 @@ class HomeController extends Controller
             'categorias' => Categoria::all(),
         ];
         return view('paginas.contactos')->with($params);
+    }
+
+    public function enviar(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required',
+            'mensagem' => 'required',
+        ]);
+
+        $contacto = Contacto::create([
+            'email' => $request->input('email'),
+            'mensagem' => $request->input('mensagem'),
+        ]);
+
+        return redirect()->route('contactos')->with('success', "Mensagem enviada com sucesso!");
+    }
+    public function categoria($nome)
+    {
+        return $nome;
+        $params = [
+            'categoria' => Categoria::find($id),
+        ];
+
+        return view('produtos.categoria');
     }
 
 }

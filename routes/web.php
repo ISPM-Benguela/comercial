@@ -30,6 +30,8 @@ Route::get('contactos', 'HomeController@contactos')->name('contactos');
 
 Route::post('enviar', 'HomeController@enviar')->name('enviar');
 
+Route::resource("categoria","CategoriaController");
+
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@imageUploadPost']);
@@ -48,6 +50,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('previlegios', 'PrevilegioController');
 
         Route::resource('encomendas', 'EncomendaController');
+
+        Route::resource('carousel', 'CarouselController');
 
         Route::resource('vendas', 'VendaController');
 

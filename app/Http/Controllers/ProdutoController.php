@@ -18,22 +18,9 @@ class ProdutoController extends Controller
 
    
         $params = [
-            'titulo' => 'Produtos'
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
         ];
-        /*
-        $product = new Produto;
-        $product->nome = 'God of War';
-        $product->descricao = "BOm produto";
-        $product->preco = "23.3";
-        $product->stock = "23";
-        
-        $product->save();
-
-        $category = Categoria::find([1, 2]);
-        $product->categorias()->attach($category);
-
-        return 'Success';*/
-
         
 
         return view('produtos.index')->with([
@@ -109,7 +96,7 @@ class ProdutoController extends Controller
             'stock' => $request->input('preco'),
         ]);
 
-        return redirect()->route('produtos')->with('Produto cadastrado com sucesso');
+        return redirect()->route('produtos.index')->with('success','Produto cadastrado com sucesso');
     }
 
     /**
