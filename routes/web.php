@@ -21,6 +21,15 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('sobre', 'HomeController@sobre')->name('sobre');
+
+
+Route::get('servicos', 'HomeController@servicos')->name('servicos');
+
+Route::get('contactos', 'HomeController@contactos')->name('contactos');
+
+Route::post('enviar', 'HomeController@enviar')->name('enviar');
+
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@imageUploadPost']);

@@ -4,6 +4,7 @@ namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Comercio\Categoria;
+use Comercio\Produto;
 use Comercio\Carousel;
 
 class HomeController extends Controller
@@ -28,7 +29,31 @@ class HomeController extends Controller
         $params = [
             'categorias' => Categoria::all(),
             'carousel' => Carousel::all(),
+            'produtos' => Produto::all(),
         ];
-        return view('pages.index')->with($params);
+        return view('paginas.index')->with($params);
     }
+
+    public function sobre()
+    {
+        $params = [
+            'categorias' => Categoria::all(),
+        ];
+        return view('paginas.sobre')->with($params);
+    }
+    public function servicos()
+    {
+        $params = [
+            'categorias' => Categoria::all(),
+        ];
+        return view('paginas.servicos')->with($params);
+    }
+    public function contactos()
+    {
+        $params = [
+            'categorias' => Categoria::all(),
+        ];
+        return view('paginas.contactos')->with($params);
+    }
+
 }

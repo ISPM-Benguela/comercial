@@ -87,31 +87,28 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-									<a href="product.html">Inicio</a>
+									<a href="{{ route('home')}}">Inicio</a>
 							</li>
 
 							<li class="active-menu">
 								<a href="">Categoria</a>
 								<ul class="sub-menu">
 									@foreach($categorias as $categoria)
-										<li><a href="index.html">{{ $categoria->nome }}</a></li>
+										<li><a href="{{ $categoria->id }}">{{ $categoria->nome }}</a></li>
 									@endforeach
 								</ul>
 							</li>
 
 							<li>
-								<a href="product.html">Sobre - nós</a>
+								<a href="{{ route('sobre')}}">Sobre - nós</a>
 							</li>
 
 							<li  >
-								<a href="shoping-cart.html">Nossos serviços</a>
-							</li>
-							<li>
-								<a href="about.html">Ajuda</a>
+								<a href="{{ route('servicos')}}">Nossos serviços</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contactos</a>
+								<a href="{{ route('contactos')}}">Contactos</a>
 							</li>
 						</ul>
 					</div>	
