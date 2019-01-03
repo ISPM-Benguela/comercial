@@ -5,6 +5,7 @@ namespace Comercio\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Categoria;
+use Comercio\Produto;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,7 @@ class HomeController extends Controller
         $params = [
             'categorias' => Categoria::all(),
         ];
+
         return view('admin.painel.inicio')->with($params);
     }
 }

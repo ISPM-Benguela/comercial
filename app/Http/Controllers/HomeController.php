@@ -31,6 +31,7 @@ class HomeController extends Controller
             'categorias' => Categoria::all(),
             'carousel' => Carousel::all(),
             'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
+            'desponivel' => Produto::all(),
         ];
         return view('paginas.index')->with($params);
     }

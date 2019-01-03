@@ -73,8 +73,9 @@
 					<nav class="limiter-menu-desktop container">
 	
 						<!-- Logo desktop -->
-						<a href="#" class="logo">
-							<img src="{{asset('images/icons/logo-01.png')}}" height="30" alt="IMG-LOGO">
+						<a href="{{route('inicio')}}" class="logo">
+							{{-- <img src="{{asset('images/icons/logo-01.png')}}" height="30" alt="IMG-LOGO"> --}}
+							<h2 style="font-weight: bold;"><span style="color: red;">DB </span>Shopping</h2>
 						</a>
 	
 						<!-- Menu desktop -->
@@ -297,9 +298,9 @@
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
 									<li><i class="icon fa fa-list-ol"></i><a href="#" data-toggle="collapse" data-target="#categoria"> Categorias  <i class="fa fa-fw fa-caret-down"></i></a>
 										<ul id="categoria" class="collapse">
-											<li><a href="">Electro domestico</a></li>
-											<li><a href="">Roupas</a></li>
-											<li><a href="">Acessorios</a></li>
+										  @foreach($categorias as $categoria )
+											<li><a href="">{{ $categoria->nome }} </a></li>
+										 @endforeach
 										</ul>
 									</li>
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>

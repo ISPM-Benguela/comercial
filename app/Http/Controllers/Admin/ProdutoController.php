@@ -37,7 +37,8 @@ class ProdutoController extends Controller
         
 
         return view('produtos.index')->with([
-            'params' => $params
+            'params' => $params,
+            'categorias' => Categoria::all(),
         ]);
     }
 
