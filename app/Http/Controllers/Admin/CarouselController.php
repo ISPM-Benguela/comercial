@@ -32,7 +32,11 @@ class CarouselController extends Controller
      */
     public function create()
     {
-        //
+        $params = [
+            'categorias' => Categoria::all(),
+            'produtos' => Produto::all(),
+        ];
+        return view('admin.carousel.create')->with($params);
     }
 
     /**
@@ -43,7 +47,12 @@ class CarouselController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'produto' => 'required',
+            'imagem' => 'required'
+        ]);
+
+
     }
 
     /**

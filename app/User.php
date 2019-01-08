@@ -5,6 +5,7 @@ namespace Comercio;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -29,10 +30,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function setPasswordAttribute($password)
-    {
-    $this->attributes['password'] = bcrypt($password);
-    }
+    
     
     /**
      * Este metodo sera responsavel e pegar

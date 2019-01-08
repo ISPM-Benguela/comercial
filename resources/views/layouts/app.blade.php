@@ -298,6 +298,7 @@
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
 									<li><i class="icon fa fa-list-ol"></i><a href="#" data-toggle="collapse" data-target="#categoria"> Categorias  <i class="fa fa-fw fa-caret-down"></i></a>
 										<ul id="categoria" class="collapse">
+										
 										  @foreach($categorias as $categoria )
 											<li><a href="">{{ $categoria->nome }} </a></li>
 										 @endforeach

@@ -4,6 +4,7 @@ namespace Comercio\Http\Controllers\Auth;
 
 use Comercio\User;
 use Comercio\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Comercio\Perfil;
@@ -66,7 +67,7 @@ class RegisterController extends Controller
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
 
         $perfil = new Perfil;

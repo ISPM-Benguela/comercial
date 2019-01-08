@@ -18,6 +18,7 @@ class CreateProdutosTable extends Migration
             $table->integer('categoria_id')->unsigned();
             $table->string('nome');
             $table->text('descricao');
+            $table->string('imagem');
             $table->float('preco');
             $table->integer('stock');
             $table->boolean('promocao')->default(false);

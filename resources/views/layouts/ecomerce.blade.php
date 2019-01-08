@@ -91,7 +91,7 @@
 							</li>
 
 							<li class="active-menu">
-								<a href="">Categoria</a>
+								<a href="">Categorias</a>
 								<ul class="sub-menu">
 									@foreach($categorias as $categoria)
 										<li><a href="{{ route('categoria.edit',  $categoria->id ) }}">{{ $categoria->nome }}</a></li>
