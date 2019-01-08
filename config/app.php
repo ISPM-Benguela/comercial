@@ -166,7 +166,7 @@ return [
 	    Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-       // Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,9 +229,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-	'Image' => Intervention\Image\Facades\Image::class,
-	'Form' => Collective\Html\FormFacade::class,
+	    'Image' => Intervention\Image\Facades\Image::class,
+	    'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
 
     ],
 
