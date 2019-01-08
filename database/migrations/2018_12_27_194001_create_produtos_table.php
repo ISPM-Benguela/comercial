@@ -16,6 +16,7 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('categoria_id')->unsigned();
+            $table->integer('carousel_id')->unsigned()->nullable();
             $table->string('nome');
             $table->text('descricao');
             $table->string('imagem');
@@ -26,6 +27,7 @@ class CreateProdutosTable extends Migration
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->foreign('carousel_id')->references('id')->on('carousels');
         });
     }
 

@@ -11,4 +11,9 @@ class Carousel extends Model
         'preco',
         'imagem',
     ];
+
+    public function produtos()
+    {
+        return $this->hasMany('Comercio/Produto');
+    }
 }

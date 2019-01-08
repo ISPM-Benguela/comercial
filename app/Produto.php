@@ -9,6 +9,7 @@ class Produto extends Model
 {
     protected $fillable = [
         'categoria_id',
+        'carousel_id',
         'nome',
         'descricao',
         'preco',
@@ -23,4 +24,8 @@ class Produto extends Model
         return $this->belongsTo(Categoria::class);
     }
 
+    public function carousel()
+    {
+        return $this->belongsTo('Comercio/Carousel');
+    }
 }
