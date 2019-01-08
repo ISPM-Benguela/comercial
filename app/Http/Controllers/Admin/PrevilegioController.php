@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 
 use Auth;
+use Comercio\Categoria;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -24,8 +25,12 @@ class PrevilegioController extends Controller
      */
     public function index()
     {
-        $permicao = Permission::all();
-        return view('admin.previlegios.index')->with('permicao', $permicao);
+        
+        $params = [
+            'permicao' => Permission::all(),
+            'categorias' => Categoria::all(),
+        ];
+        return view('admin.previlegios.index')->with($params);
     }
 
     /**

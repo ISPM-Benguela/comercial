@@ -8,6 +8,7 @@ use Comercio\Http\Controllers\Controller;
 use Comercio\User;
 use Auth;
 use Comercio\Perfil;
+use Comercio\Categoria;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -32,7 +33,13 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.usuarios.index', compact('usuarios'));
+
+        $params = [
+            'usuarios' => $usuarios,
+            'categorias' => Categoria::all(),
+        ];
+        
+        return view('admin.usuarios.index')->with($params);
         
     }
 
