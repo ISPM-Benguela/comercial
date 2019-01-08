@@ -9,7 +9,7 @@
 <form method="post" action="{{ route('carousel.store') }}" class="form-horizontal form-label-left">
     {{ csrf_field() }}
     <div class="form-group">
-        {{ Form::label('name', 'Selecionar produto') }}
+        {{ Form::label('name', 'Selecionar produtos') }}
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div>
     <div class="form-group">
