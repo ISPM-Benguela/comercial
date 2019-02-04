@@ -41,6 +41,8 @@ Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@im
 Route::group(["middleware" => "auth"], function(){
     Route::group(['prefix' => 'painel','namespace' => 'Admin'], function(){
 
+        //Route::get("/", "HomeController@index")->name('painel');
+
         Route::resource("usuarios","UsuarioController");
 
         Route::resource("artigos","ArtigoController");
@@ -55,8 +57,11 @@ Route::group(["middleware" => "auth"], function(){
 
         Route::resource('vendas', 'VendaController');
 
-        Route::get('inicio', 'HomeController@inicio')->name('inicio');
-       Route::resource('produto', 'ProdutoController');
+        Route::resource('categorias', 'CategoriaController');
+
+        Route::get('/', 'HomeController@inicio')->name('inicio');
+
+        Route::resource('produto', 'ProdutoController');
 
         });
 });

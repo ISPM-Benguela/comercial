@@ -304,7 +304,7 @@
 										 @endforeach
 										 @else 
 
-								           <li><a href="{{route('categoria.create')}}">Criar Categoria</a></li>
+								           <li><a href="{{route('categorias.create')}}">Criar Categoria</a></li>
 										 @endif
 										</ul>
 									</li>
