@@ -7,31 +7,20 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Create Category <a href="{{route('categorias.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Back </a></h2>
+                    <h2>Lista de categorias<a href="{{route('categorias.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Back </a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     <br />
-                    <form method="post" action="{{ route('categoria.store') }}" data-parsley-validate class="form-horizontal form-label-left">
+                    <form method="post" action="{{ route('categorias.store') }}" data-parsley-validate class="form-horizontal form-label-left">
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome da categoria <span class="required">*</span>
+                        <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome da categoria <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" value="{{ Request::old('name') ?: '' }}" id="name" name="name" class="form-control col-md-7 col-xs-12">
-                                @if ($errors->has('name'))
-                                <span class="help-block">{{ $errors->first('name') }}</span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Description <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" value="{{ Request::old('description') ?: '' }}" id="description" name="description" class="form-control col-md-7 col-xs-12">
-                                @if ($errors->has('description'))
-                                <span class="help-block">{{ $errors->first('description') }}</span>
+                                <input type="text" value="{{ Request::old('nome') ?: '' }}" id="nome" name="nome" class="form-control col-md-7 col-xs-12">
+                                @if ($errors->has('nome'))
+                                <span class="help-block">{{ $errors->first('nome') }}</span>
                                 @endif
                             </div>
                         </div>

@@ -52,7 +52,15 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nome' => 'required',
+        ]);
+        
+        $categoria = Categoria::create([
+            'nome' => $request->input('nome'),
+        ]);
+
+        return redirect()->route('categorias.index')->with('success','Categoria cadastrado com sucesso.');
     }
 
     /**
@@ -63,7 +71,10 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        $params = [
+            'categoria' => Categoria::find($id),
+        ];
+       return view('admin.categoria.delete')->with($params);
     }
 
     /**
@@ -74,7 +85,10 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $params = [
+            'categoria' => Categoria::find($id),
+        ];
+       return view('admin.categoria.edit')->with($params);
     }
 
     /**
@@ -86,7 +100,15 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nome' => 'required',
+        ]);
+        $categoria = Categoria::find($id);
+        $categoria->nome = $request->input('nome');
+
+        $categoria->save();
+
+        return redirect()->route('categorias.index')->with('info', 'Categorias actualizado com sucesso.');
     }
 
     /**
@@ -97,6 +119,10 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+
+        $categoria->delete();
+
+        return redirect()->route('categorias.index')->with('error', "Categoria eliminado com sucesso.");
     }
 }
