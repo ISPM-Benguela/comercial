@@ -303,19 +303,9 @@
 						</div>
 						<div class="corpo">
 							<ul class="nav">
+									<li> <i class="icon fa fa-home"></i><a href="{{route('inicio')}}"> Inicio </a></li>
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
-									<li><i class="icon fa fa-list-ol"></i><a href="#" data-toggle="collapse" data-target="#categoria"> Categorias  <i class="fa fa-fw fa-caret-down"></i></a>
-										<ul id="categoria" class="collapse">
-										 @if(count($categorias) > 0)
-										  @foreach($categorias as $categoria )
-											<li><a href="">{{ $categoria->nome }} </a></li>
-										 @endforeach
-										 @else 
-
-								           <li><a href="{{route('categorias.create')}}">Criar Categoria</a></li>
-										 @endif
-										</ul>
-									</li>
+									<li><a href="{{route('categorias.index')}}">Categoria</a></li>
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
 									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
 									<li><i class="icon fa fa-feed"></i><a href="#"> Notificações <span class="badge badge-danger">15</span></a></li>
@@ -446,7 +436,7 @@
 				
 
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					<!-- Link back to Colorlib cant be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 

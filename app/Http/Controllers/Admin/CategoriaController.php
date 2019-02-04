@@ -4,6 +4,9 @@ namespace Comercio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
+use Comercio\Categoria;
+use Comercio\Produto;
+
 
 class CategoriaController extends Controller
 {
@@ -14,7 +17,15 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        
+        $params = [
+            'titulo' => 'Categoria'
+        ];
+
+        return view('admin.categoria.index')->with([
+            'params' => $params,
+            'categorias' => Categoria::all(),
+        ]);
     }
 
     /**
@@ -24,7 +35,13 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        $params = [
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
+            'produtos' => Produto::all(),
+        ];
+
+        return view('admin.categoria.create')->with($params);
     }
 
     /**

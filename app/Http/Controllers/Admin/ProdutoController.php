@@ -36,9 +36,10 @@ class ProdutoController extends Controller
 
         
 
-        return view('produtos.index')->with([
+        return view('admin.produtos.index')->with([
             'params' => $params,
             'categorias' => Categoria::all(),
+            'produtos' => Produto::all(),
         ]);
     }
 
@@ -52,6 +53,7 @@ class ProdutoController extends Controller
         $params = [
             'titulo' => 'Produtos',
             'categorias' => Categoria::all(),
+            'produtos' => Produto::all(),
         ];
 
         return view('produtos.create')->with($params);
@@ -65,7 +67,49 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        $nomeFile = null;
+        $upload = null;
+
+        $this->validate($request, [
+            'nome' => 'required|string',
+            'descricao' => 'required',
+            'imagem' => 'required',
+            'preco' => 'required',
+            'stock' => 'required',
+        ]);
+
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+
+            $nome = uniqid(date('HisYmd'));
+
+            $extensao = $request->file('imagem')->extension();
+
+            $nameFile = "{$nome}.{$extensao}";
+
+            $upload = $request->file('imagem')->storeAs('Produtos', $nameFile);
+
+            if(!$upload )
+            {
+                return redirect()
+                    ->route('produtos.create')
+                    ->with('error','Falha ao fazer upload');
+            }
+        }
+
+       
         
+        $categoria = Categoria::find($request->input('categoria'));
+
+        $produto = Produto::create([
+            'nome' => $request->input('nome'),
+            'categoria_id' => $request->input('categoria'),
+            'descricao' => $request->input('descricao'),
+            'imagem' => $upload,
+            'preco' => $request->input('preco'),
+            'stock' => $request->input('preco'),
+        ]);
+
+        return redirect()->route('produtos.index')->with('success','Produto cadastrado com sucesso');
     }
 
     /**
@@ -76,7 +120,13 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        $params = [
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
+            'produto' => Produto::find($id),
+        ];
+
+        return view('admin.produtos.delete')->with($params);
     }
 
     /**
@@ -87,7 +137,13 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $params = [
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
+            'produto' => Produto::find($id),
+        ];
+
+        return view('admin.produtos.edit')->with($params);
     }
 
     /**
@@ -110,6 +166,9 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->delete();
+
+        return redirect()->route('produtos.index')->with('error', 'Actividade eliminada com sucesso.');
     }
 }

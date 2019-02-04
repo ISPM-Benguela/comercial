@@ -66,20 +66,18 @@ Route::group(["middleware" => "auth"], function(){
 
         Route::get('/', 'HomeController@inicio')->name('inicio');
 
-        Route::resource('produto', 'ProdutoController');
+        Route::resource('produtos', 'ProdutoController');
 
         });
 });
 
 // Paginas cliente com produtos
 
- Route::resource('produtos', 'ProdutoController');
 
 Route::get('/logout', function(){
     Auth::logout();
     return redirect('/');
 });
 
-Route::resource('categorias', 'ProdutoController');
 Auth::routes();
 

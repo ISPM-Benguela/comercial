@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
-@section('titulo')
-{{ $params['titulo'] }}
-@stop
 @section('head')
- <link rel="stylesheet" href="css/now.css" />
+ <link rel="stylesheet" href="{{asset('css/now.css')}}" />
  
 
- <link rel="stylesheet" href="css/backoffice/owl.carousel.min.css">
- <link rel="stylesheet" href="css/backoffice/owl.theme.default.css">
- <link rel="stylesheet" href="css/backoffice/produto.css">
+ <link rel="stylesheet" href="{{asset('css/backoffice/owl.carousel.min.css')}}">
+ <link rel="stylesheet" href="{{asset('css/backoffice/owl.theme.default.css')}}">
+ <link rel="stylesheet" href="{{asset('css/backoffice/produto.css')}}">
 @stop
 @section('principal')
   <div class="produtos">
@@ -20,7 +17,7 @@
        <div class="row">
          <div class="owl-carousel produto owl-them">
            <div class="item thumbnail">
-             <img src="images/produtos/product01.png" width="600" height="600" />
+             <img src="{{asset('images/produtos/product01.png')}}" width="600" height="600" />
              <div class="caption">
                 <h3> NoteBook PC 2000</h3>
                 <p class="catalogo">123.000 Kz <small>Estoque: 33</small></p>

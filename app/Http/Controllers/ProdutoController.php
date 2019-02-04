@@ -18,7 +18,7 @@ class ProdutoController extends Controller
 
    
         $params = [
-            'titulo' => 'Produtos',
+            'titulo' => 'Produto',
             
         ];
         
@@ -27,6 +27,7 @@ class ProdutoController extends Controller
         return view('produtos.index')->with([
             'params' => $params,
             'categorias' => Categoria::all(),
+            'produtos' => Produto::all(),
         ]);
     }
 
