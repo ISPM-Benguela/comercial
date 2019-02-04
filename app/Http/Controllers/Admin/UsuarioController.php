@@ -23,7 +23,7 @@ use Session;
 class UsuarioController extends Controller
 {
     public function __construct() {
-        $this->middleware(['auth','isAdmin']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
     /**
      * Display a listing of the resource.s
@@ -50,8 +50,11 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        $nivel = Role::get();
-        return view('admin.usuarios.create')->with('nivel', $nivel);
+        $params = [
+            'nivel' => Role::get(),
+            'categorias' => Categoria::all(),
+        ];
+        return view('admin.usuarios.create')->with($params);
     }
 
     /**
@@ -113,8 +116,9 @@ class UsuarioController extends Controller
     {
         $user = User::findOrFail($id); //Get user with specified id
         $nivel = Role::get(); //Get all roles
+        $categorias = Categoria::all();
 
-        return view('admin.usuarios.edit', compact('user', 'nivel'));
+        return view('admin.usuarios.edit', compact('user', 'nivel', 'categorias'));
     }
 
     /**

@@ -8,6 +8,7 @@ use Auth;
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Comercio\Categoria;
 
 use Session;
 
@@ -24,8 +25,11 @@ class NivelController extends Controller
      */
     public function index()
     {
-        $niveis = Role::all(); // Pegamos todos os niveis ex: admin, funcionarios etc
-        return view('admin.nivel.index')->with('niveis', $niveis);
+        $params = [
+              'niveis' => Role::all(), // Pegamos todos os niveis ex: admin, funcionarios etc
+              'categorias' => Categoria::all(),
+        ];
+        return view('admin.nivel.index')->with($params);
     }
 
     /**
@@ -35,9 +39,12 @@ class NivelController extends Controller
      */
     public function create()
     {
-        $permicoes = Permission::all();//Get all permissions
+        $params = [
+             'permicoes' => Permission::all(), //Get all permissions
+             'categorias' => Categoria::all(),
+        ];
 
-        return view('admin.nivel.create', ['permicoes'=>$permicoes]);
+        return view('admin.nivel.create')->with($params);
     }
 
     /**

@@ -29,6 +29,7 @@ class PrevilegioController extends Controller
         $params = [
             'permicao' => Permission::all(),
             'categorias' => Categoria::all(),
+            
         ];
         return view('admin.previlegios.index')->with($params);
     }
@@ -40,9 +41,12 @@ class PrevilegioController extends Controller
      */
     public function create()
     {
-        $nivel = Role::get(); // Pega todos previlegios
+        $params = [
+             'nivel' => Role::get(), // Pega todos previlegios
+             'categorias' => Categoria::all()
+        ];
 
-        return view('admin.previlegios.create')->with('nivel', $nivel);
+        return view('admin.previlegios.create')->with($params);
     }
 
     /**
@@ -98,9 +102,12 @@ class PrevilegioController extends Controller
      */
     public function edit($id)
     {
-        $permicao = Permission::findOrFail($id);
+        $params = [
+            'permicao' => Permission::findOrFail($id),
+            'categorias' => Categoria::all(),
+        ];
 
-        return view('admin.previlegios.edit', compact('permicao'));
+        return view('admin.previlegios.edit')->with($params);
     }
 
     /**
