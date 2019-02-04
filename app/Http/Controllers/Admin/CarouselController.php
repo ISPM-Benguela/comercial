@@ -47,12 +47,41 @@ class CarouselController extends Controller
      */
     public function store(Request $request)
     {
+        $nomeFile = null;
+        $upload = null;
+
         $this->validate($request, [
-            'produto' => 'required',
-            'imagem' => 'required'
+            
+            'preco' => 'required',
+            'nome' => 'required',
+            'imagem' => 'required',
         ]);
 
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
 
+            $nome = uniqid(date('HisYmd'));
+
+            $extensao = $request->file('imagem')->extension();
+
+            $nameFile = "{$nome}.{$extensao}";
+
+            $upload = $request->file('imagem')->storeAs('Carousel', $nameFile);
+
+            if(!$upload )
+            {
+                return redirect()
+                    ->route('carousel.create')
+                    ->with('error','Falha ao fazer upload');
+            }
+        }
+        $artigo = Carousel::create([
+            'preco' => $request->input('preco'),
+            'nome' => $request->input('nome'),
+            'imagem' => $upload,
+            
+        ]);
+
+        return redirect()->route('carousel.index')->with('success',"Cadastrado com sucesso.");
     }
 
     /**
@@ -63,7 +92,11 @@ class CarouselController extends Controller
      */
     public function show($id)
     {
-        //
+        $params = [
+            'categorias' => Categoria::all(),
+            'carousel' => Carousel::find($id),
+        ];
+        return view('admin.carousel.delete')->with($params);
     }
 
     /**
@@ -74,7 +107,12 @@ class CarouselController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $params = [
+            'categorias' => Categoria::all(),
+            'carousel' => Carousel::find($id),
+        ];
+        return view('admin.carousel.edit')->with($params);
     }
 
     /**
@@ -86,7 +124,38 @@ class CarouselController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nome' => 'required',
+            'preco' => 'required',
+            'imagem' => 'required',
+        ]);
+
+        $carousel = Carousel::findOrFail($id);
+
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+
+            $nome = uniqid(date('HisYmd'));
+
+            $extensao = $request->file('imagem')->extension();
+
+            $nameFile = "{$nome}.{$extensao}";
+
+            $upload = $request->file('imagem')->storeAs('Carousel', $nameFile);
+
+            if(!$upload )
+            {
+                return redirect()
+                    ->route('carousel.create')
+                    ->with('error','Falha ao fazer upload');
+            }
+        }
+
+        $carousel->nome = $request->input('nome');
+        $carousel->preco = $request->input('preco');
+        $carousel->imagem = $upload;
+
+        $carousel->save();
+        return redirect()->route('carousel.index')->with('success',"Actividade actualizado com sucesso.");
     }
 
     /**
@@ -97,6 +166,9 @@ class CarouselController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carousel = Carousel::find($id);
+        $carousel->delete();
+
+        return redirect()->route('carousel.index')->with('error', ' Eliminado com sucesso.');
     }
 }

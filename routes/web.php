@@ -19,7 +19,12 @@ Auth::routes();
 
 // paginas inicio
 
+
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/home', function(){
+    return redirect('/');
+  });
 
 Route::get('sobre', 'HomeController@sobre')->name('sobre');
 
@@ -78,4 +83,3 @@ Route::get('/logout', function(){
 Route::resource('categorias', 'ProdutoController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

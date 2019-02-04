@@ -11,7 +11,7 @@
 			<div class="slick1">
 			 @if(count($carousel) > 0)
 			 	@foreach($carousel as $carouse)
-				<div class="item-slick1" style="background-image: url(images/produtos/1.png);">
+				<div class="item-slick1" style="background-image: url('{{asset('storage')}}/{{ $carouse->imagem }}');">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">

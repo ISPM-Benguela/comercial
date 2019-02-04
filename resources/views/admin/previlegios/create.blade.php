@@ -12,7 +12,7 @@
         {{ Form::label('name', 'Nome') }}
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div><br>
-@if(!$nivel->isEmpty()) //If no roles exist yet
+@if(!$nivel->isEmpty()) 
     <h4>Atribuir permicao</h4>
 
     @foreach ($nivel as $cada) 

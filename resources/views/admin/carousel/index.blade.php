@@ -22,13 +22,14 @@
        <div class="row">
          @foreach($carousel as $carouse)
            <div class="col-md-3 thumbnail">
-              <img src="{{asset('storage')}}/{{ $carouse->nome }}" width="600" height="600" />
+              <img src="{{asset('storage')}}/{{ $carouse->imagem }}" width="600" height="600" />
               <div class="caption">
               <p>{{ $carouse->nome }}</p>
                 <p class="catalogo">{{ $carouse->preco }} </p>
 
-                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
-                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+                 <a href="{{ route('carousel.edit', ['id' => $carouse->id]) }}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Delete"></i> Actualizar</a>
+                 <a href="{{ route('carousel.show', ['id' => $carouse->id]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> Eliminar</a>
+                  
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
         @endforeach

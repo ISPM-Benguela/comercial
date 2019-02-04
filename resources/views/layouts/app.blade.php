@@ -61,7 +61,15 @@
 							</a>
 	
 							<a href="#" class="flex-c-m trans-04 p-lr-25">
-								Zacarias ( <span>Administrador</span>)
+								{{ Auth::user()->name }}
+								  ( <span>
+								    @role('admin')
+								        Admininstrador
+								    @endrole
+									@role('caixa')
+								        Caixa
+								    @endrole
+								 </span>)
 							</a>
 							<a class="flex-c-m trans-04 p-lr-25" href="{{route('logout')}}">Sair</a>
 						
@@ -69,8 +77,8 @@
 					</div>
 				</div>
 	
-				<div class="wrap-menu-desktop how-shadow1">
-					<nav class="limiter-menu-desktop container">
+				<div class="wrap-menu-desktop how-shadow1"  >
+					<nav class="limiter-menu-desktop container" >
 	
 						<!-- Logo desktop -->
 						<a href="{{route('inicio')}}" class="logo">

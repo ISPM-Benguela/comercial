@@ -28,8 +28,8 @@
                 <p>Este computador é ideial para programadores
                   tem 4 GB de RAM 1 Tera de espaço.</p>
 
-                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
-                   <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+                 <p><a href="#" class="btn btn-primary btn-xs" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                   <a href="#" class="btn btn-danger btn-xs" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
@@ -41,8 +41,8 @@
                 <p>Este aucutador é ideial para ouvir boa musica
                     em qualquer lugar suporta bluetooth.</p>
 
-                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a>
-                  <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+                 <p><a href="#" class="btn btn-primary btn-xs" role="button"><i class="fa fa-pencil"></i> Editar</a>
+                  <a href="#" class="btn btn-danger btn-xs" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">
@@ -54,8 +54,8 @@
                 <p>Este e um dos recentes produto da apple com grandes 
                   capacidade ele tem de espaço 64 BG.</p>
 
-                 <p><a href="#" class="btn btn-primary" role="button"><i class="fa fa-pencil"></i> Editar</a> 
-                 <a href="#" class="btn btn-danger" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
+                 <p><a href="#" class="btn btn-primary btn-xs" role="button"><i class="fa fa-pencil"></i> Editar</a> 
+                 <a href="#" class="btn btn-danger btn-xs" role="button"><i class="fa fa-trash"></i> Eliminar</a></p>
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
            <div class="item thumbnail">

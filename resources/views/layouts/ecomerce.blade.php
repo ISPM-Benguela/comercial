@@ -38,7 +38,7 @@
 <body class="animsition">
 	
 	<!-- Header -->
-	<header>
+	<header style="background: red;">
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
@@ -75,16 +75,17 @@
 				</div>
 			</div>
 
-			<div class="wrap-menu-desktop">
+			<div class="wrap-menu-desktop" style="background: #f8f8f8;">
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						{{-- <img src="images/icons/logo-01.png" alt="IMG-LOGO"> --}}
+						<h5 style="font-weight: bold;"><span style="color: red;">DB </span>Shopping</h5>
 					</a>
 
 					<!-- Menu desktop -->
-					<div class="menu-desktop">
+					<div class="menu-desktop" >
 						<ul class="main-menu">
 							<li>
 									<a href="{{ route('home')}}">Inicio</a>
