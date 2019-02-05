@@ -58,11 +58,10 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        $categoria = Categoria::find($id);
-        
         $params = [
-            'categorias' => Categoria::find(),
-            'categoria' => $categoria,
+            'categoria' => Categoria::find($id),
+            'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
+            'desponivel' => Produto::all(),
         ];
         return view('paginas.categoria')->with($params);
     }

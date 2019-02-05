@@ -11,6 +11,7 @@ class Perfil extends Model
     protected $fillable = [
         'nome',
         'provincia',
+        'imagem',
         'tipo',
         'user_id',
     ];

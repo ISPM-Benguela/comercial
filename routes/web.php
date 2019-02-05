@@ -35,11 +35,15 @@ Route::get('contactos', 'HomeController@contactos')->name('contactos');
 
 Route::post('enviar', 'HomeController@enviar')->name('enviar');
 
+Route::post('cliente', 'ClienteController@index')->name('cliente');
+
 Route::resource("categoria","CategoriaController");
 
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@imageUploadPost']);
+
+
 
 // Painel de controle so para funcionarios
 
@@ -67,6 +71,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::get('/', 'HomeController@inicio')->name('inicio');
 
         Route::resource('produtos', 'ProdutoController');
+
+        Route::resource('perfil', 'PerfilController');
 
         });
 });

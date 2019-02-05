@@ -2,46 +2,68 @@
 
 @section('head')
  <link rel="stylesheet" href="{{asset('css/inicio/inicio.css')}}">
+ <link rel="stylesheet" href="{{asset('css/vetrine.css')}}">
 @stop
 @section('principal')
 
 	<!-- Slider -->
 	<section class="section-slide">
-		<div class="wrap-slick1">
-			<div class="slick1">
+		<div class="row">
+		<div class="col-md-4 col-sm-4">
+			<div class="container">
+				<div class="well">
+					<h2 class="">Categorias</h2>
+
+					<ul class="nav-list">
+					    @if(count($categorias) > 0)
+							@foreach($categorias as $categoria)
+								<li><a href="{{route('categoria.edit', ['id' => $categoria->id])}}">{{ $categoria->nome }} <span class="badge badge-danger">44</span></a></li>
+							@endforeach
+						@else
+							<li><a href="">Nao temos ainda categoria</a></li>
+						@endif
+					</ul>
+				</div>
+			</div>
+		</div>
+		  <div class="col-md-7 col-sm-4">
+		    <div class="wrap-slick1">
+			
+			 <div class="slick1">
 			 @if(count($carousel) > 0)
 			 	@foreach($carousel as $carouse)
-				<div class="item-slick1" style="background-image: url('{{asset('storage')}}/{{ $carouse->imagem }}');">
+				<div class="item-slick1" style="background-image: url('{{asset('storage')}}/{{ $carouse->imagem }}'); background-size: 70% 70%;">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									{{ $carouse->preco }}
+									{{$carouse->nome }}
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									
-									{{ $carouse->nome }}
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: #D9251B;">
+									{{ $carouse->preco }} Kz
 								</h2>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Mais Produtos 
+									Adicionar ao carrinho
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 				@endforeach
-			@else 
-			<div class="item-slick1">
-				<h3>Precisas cadastrar o carousel</h3>
-			</div>
-			@endif
-			</div>
+			 @else
+               <div><h3>Precisas cadastrar produtos</h3></div>
+			 @endif
+			 </div><!-- ./ slick1 -->
+			 
+		    </div>
+		  </div>
+		  
 		</div>
 	</section>
 
@@ -86,7 +108,7 @@
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
-						<div class="block2-pic hov-img0">
+						<div class="block2-pic hov-img0" style="background: #ccc; border-radius: 8px;">
 							<img src="{{asset('storage')}}/{{ $produto->imagem }}" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">

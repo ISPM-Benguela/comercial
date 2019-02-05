@@ -56,7 +56,7 @@
 								Ver O site
 							</a>
 	
-							<a href="#" class="flex-c-m trans-04 p-lr-25">
+							<a href="{{route('perfil.index')}}" class="flex-c-m trans-04 p-lr-25">
 								Minha Conta
 							</a>
 	
@@ -68,6 +68,8 @@
 								    @endrole
 									@role('caixa')
 								        Caixa
+									@else 
+									    Cliente	
 								    @endrole
 								 </span>)
 							</a>
@@ -107,7 +109,7 @@
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 	
-							<img src="{{asset('images/user.jpg')}}"  alt="perfil "/>
+							<img src="{{asset('storage')}}/{{Auth::user()->perfil->imagem }}"  alt="perfil "/>
 						</div>
 					</nav>
 				</div>
@@ -159,7 +161,7 @@
 								Mais Vendidos
 							</a>
 	
-							<a href="#" class="flex-c-m p-lr-10 trans-04">
+							<a href="{{route('perfil.index')}}" class="flex-c-m p-lr-10 trans-04">
 								Minha Conta
 							</a>
 	
@@ -280,7 +282,7 @@
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+						<a href="{{route('vendas.index')}}" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							Ver todas compras
 						</a>
 

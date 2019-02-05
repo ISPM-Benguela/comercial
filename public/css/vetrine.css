@@ -1,0 +1,34 @@
+.section-slide {
+    border-bottom: 1px solid #ccc;
+}
+.block2 .block2-pic .produtos {
+    background: #ccc; border-radius: 8px;
+}
+.section-slide .row .col-md-4 .container .well {
+    width: 100%;
+    height: auto;
+    background: #ccc;
+    border-radius: 10px;
+    margin-top: 25%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 15%;
+} 
+.section-slide .row .col-md-4 .container .well h2 {
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.section-slide .row .col-md-4 .container .well li {
+    padding-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #fff;
+    font-weight: bold;
+    font-size: 19px;
+}
+.section-slide .row .col-md-4 .container .well li a {
+    color: #fff;
+}
