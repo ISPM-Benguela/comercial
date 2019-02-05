@@ -35,7 +35,7 @@ Route::get('contactos', 'HomeController@contactos')->name('contactos');
 
 Route::post('enviar', 'HomeController@enviar')->name('enviar');
 
-Route::post('cliente', 'ClienteController@index')->name('cliente');
+Route::get('cliente', 'ClienteController@index')->name('cliente');
 
 Route::resource("categoria","CategoriaController");
 
