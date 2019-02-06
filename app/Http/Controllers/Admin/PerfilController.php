@@ -90,8 +90,6 @@ class PerfilController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'provincia' => 'required',
             'imagem' => 'required',
         ]);
         if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
@@ -118,7 +116,7 @@ class PerfilController extends Controller
         $perfil->imagem = $upload;
         $perfil->save();
 
-        return redirect()->route('perfil.edit', ['id' => $perfil->id])->with('success', 'Perfil actializado com sucesso');
+        return redirect()->route('home')->with('success', 'Perfil actializado com sucesso');
     }
 
     /**
