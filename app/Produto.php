@@ -4,6 +4,7 @@ namespace Comercio;
 
 use Illuminate\Database\Eloquent\Model;
 use Comercio\Categoria;
+use Comercio\Carrinho;
 
 class Produto extends Model
 {
@@ -22,6 +23,10 @@ class Produto extends Model
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);
+    }
+    public function carrinho()
+    {
+        return $this->belongsTo(Carrinho::class);
     }
 
     public function carousel()

@@ -44,5 +44,9 @@ class User extends Authenticatable
     {
         return $this->hasOne("Comercio\Perfil");
     }
+    public function carrinho()
+    {
+        return $this->hasOne("Comercio\Carrinho");
+    }
 
 }
