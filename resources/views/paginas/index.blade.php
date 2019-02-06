@@ -3,6 +3,7 @@
 @section('head')
  <link rel="stylesheet" href="{{asset('css/inicio/inicio.css')}}">
  <link rel="stylesheet" href="{{asset('css/vetrine.css')}}">
+ <link rel="stylesheet" href="{{asset('css/backoffice/principal.css')}}">
 @stop
 @section('principal')
 
@@ -172,8 +173,8 @@
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									
+									
 								</a>
 							</div>
 						</div>
@@ -182,13 +183,18 @@
 			  @endforeach	
 			</div>
 
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
-				</a>
-			</div>
+			
 		</div>
+	</section>
+	<section class="container nossa-marca">
+	    <h3>Marcas Vendidas</h3>
+
+		<ul class="marcas">
+			<li><img src="{{asset('images/dell.png')}}" width="100" height="100"  alt="Dell" /></li>
+			<li><img src="{{asset('images/hp.jpeg')}}" width="100" height="100"  alt="Dell" /></li>
+			<li><img src="{{asset('images/multichoices.jpeg')}}" width="100" height="100"  alt="Dell" /></li>
+			<li><img src="{{asset('images/samsumg.png')}}" width="100" height="100"  alt="Dell" /></li>
+		</ul>
 	</section>
 
 @stop

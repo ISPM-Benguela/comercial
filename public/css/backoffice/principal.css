@@ -1,0 +1,17 @@
+.nossa-marca  {
+    margin-top: -12%;
+    margin-bottom: 10%;
+}
+.nossa-marca h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .nossa-marca .marcas {
+      margin-left: 25%;
+  }
+  .nossa-marca .marcas li {
+        float: left;
+        margin-right: 5%;
+        margin-top: 3%;
+  }

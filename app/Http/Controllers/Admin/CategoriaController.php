@@ -87,6 +87,7 @@ class CategoriaController extends Controller
     {
         $params = [
             'categoria' => Categoria::find($id),
+            'categorias' => Categoria::all(),
         ];
        return view('admin.categoria.edit')->with($params);
     }
