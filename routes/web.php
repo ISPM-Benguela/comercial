@@ -39,6 +39,8 @@ Route::get('cliente', 'ClienteController@index')->name('cliente');
 
 Route::resource("categoria","CategoriaController");
 
+Route::resource("carrinho","CarrinhoController");
+
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@imageUploadPost']);

@@ -5,6 +5,8 @@ namespace Comercio\Http\Controllers;
 use Illuminate\Http\Request;
 use Comercio\Produto;
 use Comercio\Categoria;
+use Comercio\Carrinho;
+use Auth;
 
 class CategoriaController extends Controller
 {
@@ -58,10 +60,20 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+        
         $params = [
+            'categorias' => Categoria::all(),
             'categoria' => Categoria::find($id),
             'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
             'desponivel' => Produto::all(),
+            'total' => $total,
         ];
         return view('paginas.categoria')->with($params);
     }

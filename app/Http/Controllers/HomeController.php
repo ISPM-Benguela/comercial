@@ -7,6 +7,8 @@ use Comercio\Categoria;
 use Comercio\Produto;
 use Comercio\Carousel;
 use Comercio\Contacto;
+use Comercio\Carrinho;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,33 +29,70 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+       
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
         $params = [
             'categorias' => Categoria::all(),
             'carousel' => Carousel::all(),
             'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
             'desponivel' => Produto::all(),
+            'total' => $total,
         ];
         return view('paginas.index')->with($params);
     }
 
     public function sobre()
     {
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
         $params = [
             'categorias' => Categoria::all(),
+            'total' => $total,
         ];
         return view('paginas.sobre')->with($params);
     }
     public function servicos()
     {
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
         $params = [
             'categorias' => Categoria::all(),
+            'total' => $total,
         ];
         return view('paginas.servicos')->with($params);
     }
     public function contactos()
     {
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
         $params = [
             'categorias' => Categoria::all(),
+            'total' => $total,
         ];
         return view('paginas.contactos')->with($params);
     }

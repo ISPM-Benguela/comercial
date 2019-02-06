@@ -49,7 +49,7 @@
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+								<a href="#s" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Adicionar ao carrinho
 								</a>
 							</div>
@@ -112,7 +112,7 @@
 						<div class="block2-pic hov-img0" style="background: #ccc; border-radius: 8px;">
 							<img src="{{asset('storage')}}/{{ $produto->imagem }}" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<a href="{{route('carrinho.edit', ['id' => $produto->id])}}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15">
 								Comprar
 							</a>
 						</div>
@@ -155,7 +155,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="{{asset('storage')}}/{{ $desp->imagem }}"  alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<a href="{{route('carrinho.edit', ['id' => $desp->id])}}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15s">
 								Comprar
 							</a>
 						</div>

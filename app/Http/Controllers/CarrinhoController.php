@@ -3,6 +3,9 @@
 namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Comercio\Produto;
+use Comercio\Carrinho;
+use Auth;
 
 class CarrinhoController extends Controller
 {
@@ -34,7 +37,15 @@ class CarrinhoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $produto = Produto::find($id);
+        $user = Auth::user()->id;
+        $carrinho = Carrinho::create([
+            'user_id' => $user,
+            'produto_id' => $produto->id,
+        ]);
+
+        return redirect()->route('home');
     }
 
     /**
@@ -45,7 +56,9 @@ class CarrinhoController extends Controller
      */
     public function show($id)
     {
-        //
+        $produto = Produto::find($id);
+
+        return $produto->nome;
     }
 
     /**
@@ -56,7 +69,14 @@ class CarrinhoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user()->id;
+        
+        $params = [
+            'produto' => Produto::find($id),
+            'total' => Carrinho::where('user_id', $user)->count(),
+            
+        ];
+        return view('paginas.carrinho')->with($params);
     }
 
     /**
