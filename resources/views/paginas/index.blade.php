@@ -154,7 +154,7 @@
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="{{asset('storage')}}/{{ $desp->imagem }}"  alt="IMG-PRODUCT">
-
+                            
 							<a href="{{route('carrinho.edit', ['id' => $desp->id])}}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15s">
 								Comprar
 							</a>

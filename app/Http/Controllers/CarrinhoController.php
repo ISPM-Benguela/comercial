@@ -38,14 +38,22 @@ class CarrinhoController extends Controller
     public function store(Request $request)
     {
         $id = $request->input('id');
+
+        if(Auth::user()){
+       
         $produto = Produto::find($id);
         $user = Auth::user()->id;
+        
         $carrinho = Carrinho::create([
             'user_id' => $user,
             'produto_id' => $produto->id,
         ]);
 
         return redirect()->route('home');
+
+        }else {   
+            return redirect()->route('carrinho.edit', ['id' => $id])->with('warning', 'Para adicionar a compra no carrinho, faça login');
+        }
     }
 
     /**
@@ -69,11 +77,18 @@ class CarrinhoController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user()->id;
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
         
         $params = [
             'produto' => Produto::find($id),
-            'total' => Carrinho::where('user_id', $user)->count(),
+            'total' => $total,
             
         ];
         return view('paginas.carrinho')->with($params);

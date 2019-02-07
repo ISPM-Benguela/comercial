@@ -61,9 +61,6 @@
 						</a>
 
 						@else 
-						<a href="{{route('perfil.index')}}" class="flex-c-m trans-04 p-lr-25">
-							{{ Auth::user()->perfil['nome'] }}
-						</a>
 
 						
 							

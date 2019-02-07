@@ -27,11 +27,13 @@
                     <td>{{ $user->created_at->format('D, m, Y H:i') }}</td>
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
                     <td>
-                    <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-info pull-left btn-xs" style="margin-right: 3px;"><i class="fa fa-edit"> Editar</i></a>
+                    <a href="" class="btn btn-success pull-left btn-xs" style="margin-right: 3px;"><i class="fa fa-edit"> Notificar</i></a>
+                  
                     
 
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy', $user->id] ]) !!}
-                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['usuarios.show', $user->id] ]) !!}
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
 
                     </td>
