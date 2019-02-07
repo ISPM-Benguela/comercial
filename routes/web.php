@@ -68,6 +68,8 @@ Route::group(["middleware" => "auth"], function(){
 
         Route::resource('vendas', 'VendaController');
 
+        Route::resource('notificacao', 'NotificacaoController');
+
         Route::resource('categorias', 'CategoriaController');
 
         Route::get('/', 'HomeController@inicio')->name('inicio');
