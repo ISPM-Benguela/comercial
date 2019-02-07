@@ -1,11 +1,10 @@
 <?php
 
-namespace Comercio\Http\Controllers\Admin;
+namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Comercio\Http\Controllers\Controller;
 
-class NotificaoController extends Controller
+class NotificacaoController extends Controller
 {
     /**
      * Display a listing of the resource.
