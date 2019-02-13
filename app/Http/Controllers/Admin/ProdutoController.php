@@ -130,6 +130,7 @@ class ProdutoController extends Controller
             'categorias' => Categoria::all(),
             'produto' => Produto::find($id),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
 
         return view('admin.produtos.delete')->with($params);
@@ -178,5 +179,10 @@ class ProdutoController extends Controller
         $produto->delete();
 
         return redirect()->route('produtos.index')->with('error', 'Actividade eliminada com sucesso.');
+    }
+
+    public function promover($id)
+    {
+        return "Promo";
     }
 }

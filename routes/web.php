@@ -63,6 +63,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('nivel', 'NivelController');
 
         Route::resource('previlegios', 'PrevilegioController');
+        
+        Route::resource('promover', 'PromoverController');
 
         Route::resource('encomendas', 'EncomendaController');
 
@@ -79,6 +81,8 @@ Route::group(["middleware" => "auth"], function(){
         Route::resource('produtos', 'ProdutoController');
 
         Route::resource('perfil', 'PerfilController');
+
+        Route::post('/painel/produtos/promover/{id}', 'ProdutoController@promover')->name('produtos.promover');
 
         });
 });

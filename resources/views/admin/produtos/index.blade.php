@@ -27,7 +27,7 @@
                 <p>{{ $produto->descricao }}.</p>
 
                   <a href="{{route('produtos.edit', ['id' => $produto->id])}}" class="btn btn-primary btn-xs" role="button"><i class="fa fa-pencil"></i> Editar</a>
-                   <a href="{{route('produtos.show', ['id' => $produto->id])}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-trash"></i> Promover</a></p>
+                   <a href="{{route('promover.edit', ['id' => $produto->id])}}" class="btn btn-success btn-xs" role="button"><i class="fa fa-trash"></i> Promover</a></p>
                    <a href="{{route('produtos.show', ['id' => $produto->id])}}" class="btn btn-danger btn-xs" role="button"><i class="fa fa-trash"></i> Eliminar</a>
              </div><!-- ./ caption -->
            </div><!-- ./ item -->
@@ -73,7 +73,7 @@
                                 <td>{{$row->descricao}}</td>
                                 <td>
                                     <a href="{{ route('produtos.edit', ['id' => $row->id]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> Editar produto</a>
-                                    <a href="{{ route('produtos.show', ['id' => $row->id]) }}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Delete"></i> Promover produto</a>
+                                    <a href=""{{route('promover.edit', ['id' => $produto->id])}}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Promover"></i> Promover produto</a>
                                     <a href="{{ route('produtos.show', ['id' => $row->id]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> Eliminar produto</a>
                                 </td>
                             </tr>
