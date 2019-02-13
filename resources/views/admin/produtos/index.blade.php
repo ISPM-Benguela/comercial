@@ -51,7 +51,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Preco</th>
-                                <th>Descricao/th>
+                                <th>Descricao</th>
                                 
                                 <th>Accao</th>
                             </tr>
@@ -60,7 +60,7 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Preco</th>
-                                <th>Descricao/th>
+                                <th>Descricao</th>
                                 <th>Accao</th>
                             </tr>
                         </tfoot>
@@ -74,7 +74,7 @@
  
                                 <td>
                                     <a href="{{ route('produtos.edit', ['id' => $row->id]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> Editar produto</a>
-                                    <a href=""{{route('promover.edit', ['id' => $produto->id])}}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Promover"></i> Promover produto</a>
+                                    <a href="{{route('promover.edit', ['id' => $produto->id])}}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Promover"></i> Promover produto</a>
                                     <a href="{{ route('produtos.show', ['id' => $row->id]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> Eliminar produto</a>
                                 </td>
                             </tr>

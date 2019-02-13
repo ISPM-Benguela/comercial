@@ -27,14 +27,24 @@
 
                             <div class="caption">
                                 <h3>{{ $produto->nome }}</h3>
-                                <p>preço anterior {{ $produto->preco }}</p>
-                               
+                                <p>preço normal {{number_format($produto->preco,2)}} Kz </p>
+                                <p>
+                                  @if ($produto->promocao == 1 )
+                                     Preço promoção {{number_format($produto->novo_preco,2)}} Kz
+                                  @endif
+                                </p>
                             </div>
                         </div>
                      </div>
                     <div  style="margin-bottom: 20px;"></div>
                     <div class="row">
                        <div class="col-md-6 col-xs-6">
+                         @if ( $produto->promocao == 1 )
+                            
+                            <a href="{{ route('promover.show', ['id' => $produto->id])}}" class="btn btn-danger">Terminar Promoção </a>
+  
+                         @else 
+
                         <form method="POST" action="{{ route('promover.store')}}">
  
                         <div class="form-group{{ $errors->has('preco') ? ' has-error' : '' }}">
@@ -59,6 +69,7 @@
                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                         <button type="submit" class="btn btn-success"> Promover o produto</button>
                     </form>
+                         @endif
                        </div>
                     </div>
                 

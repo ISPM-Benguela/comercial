@@ -18,7 +18,16 @@ class PromoverController extends Controller
      */
     public function index()
     {
-        //
+        $params = [
+            'titulo' => 'Produtos',
+            'categorias' => Categoria::all(),
+            #'produto' => Produto::find($id),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
+            'produtos' => produto::where('promocao', 1)->get(),
+        ];
+        return view('admin.promover.index')->with($params);
     }
 
     /**
@@ -52,13 +61,12 @@ class PromoverController extends Controller
 
         if($produto->promocao == false){
             $produto->promocao = 1;
+            $produto->novo_preco = $preco;
             $produto->inicio = $inicio;
             $produto->fim = $termino;
             $produto->save();
 
-            echo "Produto promovido";
-        }else {
-            echo "Ja nao temos promocao";
+            return redirect()->route('promover.index')->with('success', 'Produto em promoção');
         }
     }
 
@@ -70,7 +78,17 @@ class PromoverController extends Controller
      */
     public function show($id)
     {
-        //
+        $produto = Produto::find($id);
+
+        if($produto->promocao == true){
+            $produto->promocao = 0;
+            $produto->novo_preco = 0;
+            $produto->inicio = 0;
+            $produto->fim = 0;
+            $produto->save();
+
+            return redirect()->route('promover.index')->with('success', 'Promoção do Produto terminado.');
+        }
     }
 
     /**

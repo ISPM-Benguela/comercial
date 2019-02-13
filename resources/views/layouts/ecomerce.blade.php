@@ -93,8 +93,8 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						{{-- <img src="images/icons/logo-01.png" alt="IMG-LOGO"> --}}
-						<h5 style="font-weight: bold; color: #291769; font-size: 29px;"><span style="color: #D9251B;">DB </span>Shopping</h5>
+						    <img src="{{ asset('images/icons/logo.jpg')}}" alt="IMG-LOGO"> 
+						{{--  <h5 style="font-weight: bold; color: #291769; font-size: 29px;"><span style="color: #D9251B;">DB </span>Shopping</h5> --}}
 					</a>
 
 					<!-- Menu desktop -->

@@ -16,7 +16,8 @@ class HomeController extends Controller
             'categorias' => Categoria::all(),
             'titulo' => "Produtos",
             'notitotal' => Notificao::where('nivel', 1)->count(),
-            'totalproduto' => Produto::all()->count(),
+            'totalproduto' => Produto::where('promocao', 0)->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
 
         return view('admin.painel.inicio')->with($params);

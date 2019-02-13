@@ -10,6 +10,7 @@ use Comercio\Contacto;
 use Comercio\Carrinho;
 use Auth;
 
+
 class HomeController extends Controller
 {
     /**

@@ -1,19 +1,20 @@
 .section-slide {
     border-bottom: 1px solid #ccc;
+    height: 90%;
 }
 .block2 .block2-pic .produtos {
     background: #ccc; border-radius: 8px;
 }
 .section-slide .row .col-md-4 .container .well {
     width: 100%;
-    height: auto;
-    background: #ccc;
-    border-radius: 10px;
-    margin-top: 25%;
-    padding-top: 5%;
+    height: 70%;
+    background: #888;
+    margin-top: 30%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 15%;
+    padding-top: 10px;
+    color: #fff;
 } 
 .section-slide .row .col-md-4 .container .well h2 {
     font-weight: 100;

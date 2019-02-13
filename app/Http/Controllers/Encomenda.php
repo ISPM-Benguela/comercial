@@ -1,13 +1,10 @@
 <?php
 
-namespace Comercio\Http\Controllers\Admin;
+namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Comercio\Http\Controllers\Controller;
-use Comercio\Notificao;
-use Comercio\Produto;
 
-class EncomendaController extends Controller
+class Encomenda extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +13,7 @@ class EncomendaController extends Controller
      */
     public function index()
     {
-        $params = [
-            'notitotal' => Notificao::where('nivel', 1)->count(),
-            'totalproduto' => Produto::all()->count(),
-            'totalpromo' => produto::where('promocao', 1)->count(),
-            
-        ];
-        return view('encomendas.index')->with($params);
+        //
     }
 
     /**
