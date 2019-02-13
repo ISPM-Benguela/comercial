@@ -4,7 +4,7 @@ namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Encomendar extends Controller
+class EncomendarController extends Controller
 {
     /**
      * Display a listing of the resource.
