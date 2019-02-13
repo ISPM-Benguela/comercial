@@ -103,7 +103,9 @@
 							<li>
 									<a href="{{ route('home')}}">Inicio</a>
 							</li>
-
+                            <li>
+									<a href="{{ route('encomendas.index')}}">Encomedar</a>
+							</li>
 							<li>
 								<a href="{{ route('sobre')}}">Sobre - nós</a>
 							</li>
