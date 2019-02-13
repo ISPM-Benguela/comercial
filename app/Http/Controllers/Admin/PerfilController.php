@@ -30,6 +30,8 @@ class PerfilController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ]);
     }
 
@@ -83,6 +85,8 @@ class PerfilController extends Controller
             'params' => $params,
             'perfil' => Perfil::find($user),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ]);
     }
 

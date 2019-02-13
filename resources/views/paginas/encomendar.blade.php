@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
-					Produtos da categoria ( {{ $categoria->nome }} )
+					Encomendar produtos
 				</h3>
 			</div>
 
@@ -50,8 +50,8 @@
 						<div class="block2-pic hov-img0" style="background: #ccc; border-radius: 8px;">
 							<img src="{{asset('storage')}}/{{ $produto->imagem }}" alt="IMG-PRODUCT">
 
-							<a href="{{route('carrinho.edit', ['id' => $produto->id])}}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-								Comprar
+							<a href="{{route('encomendar.edit', ['id' => $produto->id])}}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								Encomendar
 							</a>
 						</div>
 
@@ -72,10 +72,6 @@
 					</div>
 				</div>
 				@endforeach
-                @else 
-				  <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<h3>Deves Cadastrar produto</h3>
-				  </div>
 				@endif 
 			</div>
 

@@ -3,6 +3,12 @@
 namespace Comercio\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Comercio\Categoria;
+use Comercio\Produto;
+use Comercio\Carousel;
+use Comercio\Contacto;
+use Comercio\Carrinho;
+use Auth;
 
 class EncomendarController extends Controller
 {
@@ -13,9 +19,20 @@ class EncomendarController extends Controller
      */
     public function index()
     {
+        
+
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
         $params = [
-            
-            'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
+            'categorias' => Categoria::all(),
+            'carousel' => Carousel::all(),
+            'produtos' => Produto::where('stock', 0)->get(),
             'desponivel' => Produto::all(),
             'total' => $total,
         ];
@@ -63,7 +80,23 @@ class EncomendarController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            $user = Auth::user()->id;
+            $total = Carrinho::where('user_id', $user)->count();
+        }
+
+        $params = [
+            'categorias' => Categoria::all(),
+            'carousel' => Carousel::all(),
+            'produtos' => Produto::where('stock', 0)->get(),
+            'desponivel' => Produto::all(),
+            'total' => $total,
+        ];
+        echo $id;
+        #return view('paginas.encomendar')->with($params);
     }
 
     /**

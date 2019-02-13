@@ -5,6 +5,8 @@ namespace Comercio\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Notificao;
+use Comercio\Categoria;
+use Comercio\Produto;
 
 class VendaController extends Controller
 {
@@ -17,6 +19,10 @@ class VendaController extends Controller
     {
         $params = [
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::where('promocao', 0)->count(),
+            'totalpromo' => Produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('vendas.index')->with($params);

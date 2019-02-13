@@ -28,9 +28,10 @@ class NivelController extends Controller
     public function index()
     {
         $params = [
-              'niveis' => Role::all(), // Pegamos todos os niveis ex: admin, funcionarios etc
-              'categorias' => Categoria::all(),
-
+            'niveis' => Role::all(), // Pegamos todos os niveis ex: admin, funcionarios etc
+            'categorias' => Categoria::all(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
@@ -51,6 +52,8 @@ class NivelController extends Controller
              'totalpromo' => produto::where('promocao', 1)->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.nivel.create')->with($params);
@@ -100,6 +103,7 @@ class NivelController extends Controller
         $params = [
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            
         ];
         return redirect('nivel')->with($params);
     }
@@ -117,8 +121,10 @@ class NivelController extends Controller
         $notitotal = Notificao::where('nivel', 1)->count();
         $totalproduto = produto::all()->count();
         $totalpromo = produto::where('promocao', 1)->count();
+        $totalEncomeda = Produto::where('stock', 0)->count();
+        $categTotal = Categoria::all()->count();
 
-        return view('admin.nivel.edit', compact('role', 'permissions','notitotal','totalproduto','totalpromo'));
+        return view('admin.nivel.edit', compact('totalEncomeda','categTotal','role', 'permissions','notitotal','totalproduto','totalpromo'));
     }
 
     /**

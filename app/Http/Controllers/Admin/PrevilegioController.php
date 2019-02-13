@@ -34,6 +34,8 @@ class PrevilegioController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
             
         ];
         return view('admin.previlegios.index')->with($params);
@@ -52,6 +54,8 @@ class PrevilegioController extends Controller
              'totalpromo' => produto::where('promocao', 1)->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.previlegios.create')->with($params);
@@ -122,6 +126,8 @@ class PrevilegioController extends Controller
             'totalpromo' => produto::where('promocao', 1)->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.previlegios.edit')->with($params);

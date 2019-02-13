@@ -42,6 +42,8 @@ class UsuarioController extends Controller
             'totalproduto' => Produto::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         
         return view('admin.usuarios.index')->with($params);
@@ -61,6 +63,8 @@ class UsuarioController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return view('admin.usuarios.create')->with($params);
     }
@@ -114,6 +118,8 @@ class UsuarioController extends Controller
         $params = [
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return redirect('usuarios')->with($params); 
     }
@@ -132,8 +138,10 @@ class UsuarioController extends Controller
         $totalpromo = produto::where('promocao', 1)->count();
         $notitotal =Notificao::where('nivel', 1)->count();
         $totalproduto = produto::all()->count();
+        $totalEncomeda = Produto::where('stock', 0)->count();
+        $categTotal = Categoria::all()->count();
 
-        return view('admin.usuarios.edit', compact('totalpromo','user', 'nivel', 'categorias','notitotal','totalproduto'));
+        return view('admin.usuarios.edit', compact('categTotal','totalEncomeda','totalpromo','user', 'nivel', 'categorias','notitotal','totalproduto'));
     }
 
     /**

@@ -84,8 +84,8 @@
 	
 						<!-- Logo desktop -->
 						<a href="{{route('inicio')}}" class="logo">
-							{{-- <img src="{{asset('images/icons/logo-01.png')}}" height="30" alt="IMG-LOGO"> --}}
-							<h2 style="font-weight: bold;"><span style="color: red;">DB </span>Shopping</h2>
+							 <img src="{{asset('images/icons/logo.jpg')}}" height="80" alt="IMG-LOGO"> 
+							{{-- <h2 style="font-weight: bold;"><span style="color: red;">DB </span>Shopping</h2>--}}
 						</a>
 	
 						<!-- Menu desktop -->
@@ -315,9 +315,9 @@
 									<li> <i class="icon fa fa-home"></i><a href="{{route('inicio')}}"> Inicio </a></li>
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">{{ $totalproduto }}</span></a></li>
 									<li> <i class="icon fa fa-hourglass-start"></i><a href="{{route('promover.index')}}"> Promoção <span class="badge">{{ $totalpromo }}</span></a></li>
-									<li><a href="{{route('categorias.index')}}">Categoria</a></li>
+									<li><a href="{{route('categorias.index')}}">Categoria <span class="badge badge-danger">{{ $categTotal }} </span> </a></a></li>
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
-									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
+									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">{{ $totalEncomeda }} </span> </a></li>
 									<li><i class="icon fa fa-feed"></i><a href="{{ route('notificacao.index')}}"> Notificações <span class="badge badge-danger">{{ $notitotal }}</span></a></li>
 									<li><i class="icon fa fa-gears"></i><a href="{{ route('carousel.index')}}"> Carousel </a></li>
 							</ul>

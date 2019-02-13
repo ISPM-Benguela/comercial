@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Notificao;
 use Comercio\Produto;
+use Comercio\Categoria;
+
 
 class EncomendaController extends Controller
 {
@@ -20,7 +22,8 @@ class EncomendaController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
-            
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return view('encomendas.index')->with($params);
     }

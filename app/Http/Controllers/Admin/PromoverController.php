@@ -26,6 +26,8 @@ class PromoverController extends Controller
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
             'produtos' => produto::where('promocao', 1)->get(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return view('admin.promover.index')->with($params);
     }
@@ -105,6 +107,8 @@ class PromoverController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.produtos.promover')->with($params);

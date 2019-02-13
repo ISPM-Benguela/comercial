@@ -21,20 +21,6 @@ class ProdutoController extends Controller
         $params = [
             'titulo' => 'Produtos'
         ];
-        /*
-        $product = new Produto;
-        $product->nome = 'God of War';
-        $product->descricao = "BOm produto";
-        $product->preco = "23.3";
-        $product->stock = "23";
-        
-        $product->save();
-
-        $category = Categoria::find([1, 2]);
-        $product->categorias()->attach($category);
-
-        return 'Success';*/
-
         
 
         return view('admin.produtos.index')->with([
@@ -44,6 +30,8 @@ class ProdutoController extends Controller
             'notitotal' => Notificao::where('nivel', 0)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ]);
     }
 
@@ -61,6 +49,8 @@ class ProdutoController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('produtos.create')->with($params);
@@ -134,6 +124,8 @@ class ProdutoController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.produtos.delete')->with($params);
@@ -154,6 +146,8 @@ class ProdutoController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
 
         return view('admin.produtos.edit')->with($params);

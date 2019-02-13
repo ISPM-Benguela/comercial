@@ -31,6 +31,8 @@ class NotificacaoController extends Controller
             'totalproduto' => produto::all()->count(),
             'notificacao' => Notificao::all(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return view('admin.notificacao.index')->with($params);
     }
@@ -47,6 +49,8 @@ class NotificacaoController extends Controller
             'notificacao' => Notificao::all(),
             'totalproduto' => produto::all()->count(),
             'totalpromo' => produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
         ];
         return view('admin.notificacao.create')->with($params);
     }
