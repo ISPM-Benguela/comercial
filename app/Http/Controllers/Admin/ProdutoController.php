@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Categoria;
 use Comercio\Produto;
+use Comercio\Notificao;
 
 class ProdutoController extends Controller
 {
@@ -40,6 +41,8 @@ class ProdutoController extends Controller
             'params' => $params,
             'categorias' => Categoria::all(),
             'produtos' => Produto::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ]);
     }
 
@@ -54,6 +57,8 @@ class ProdutoController extends Controller
             'titulo' => 'Produtos',
             'categorias' => Categoria::all(),
             'produtos' => Produto::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
 
         return view('produtos.create')->with($params);
@@ -124,6 +129,7 @@ class ProdutoController extends Controller
             'titulo' => 'Produtos',
             'categorias' => Categoria::all(),
             'produto' => Produto::find($id),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
 
         return view('admin.produtos.delete')->with($params);
@@ -141,6 +147,8 @@ class ProdutoController extends Controller
             'titulo' => 'Produtos',
             'categorias' => Categoria::all(),
             'produto' => Produto::find($id),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
 
         return view('admin.produtos.edit')->with($params);

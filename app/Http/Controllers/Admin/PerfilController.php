@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Perfil;
 use Auth;
+use Comercio\Notificao;
+use Comercio\Produto;
 
 class PerfilController extends Controller
 {
@@ -25,6 +27,8 @@ class PerfilController extends Controller
         return view('admin.perfil.index')->with([
             'params' => $params,
             'perfil' => Perfil::find($user),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::all()->count(),
         ]);
     }
 

@@ -4,6 +4,7 @@ namespace Comercio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
+use Comercio\Notificao;
 
 class VendaController extends Controller
 {
@@ -14,7 +15,11 @@ class VendaController extends Controller
      */
     public function index()
     {
-        return view('vendas.index');
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+        ];
+
+        return view('vendas.index')->with($params);
     }
 
     /**

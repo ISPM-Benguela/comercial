@@ -17,11 +17,11 @@
          <br />
       <a href="{{route('carousel.create')}}" type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Cadastrar produto</a>  
      
-     <div class="produtos-corpo" style="background: #ccc; padding: 20px;">
+     <div class="produtos-corpo" style="padding: 20px;">
        <h3 style="padding: 10px; text-transform: uppercase; padding-bottom: 15px; color: #888; font-weight: bolder;"><i class="fa fa-barcode"></i> Produtos desponiveis</h3>
        <div class="row">
          @foreach($carousel as $carouse)
-           <div class="col-md-3 thumbnail">
+           <div class="col-md-3 thumbnail" style="margin-right: 10px;">
               <img src="{{asset('storage')}}/{{ $carouse->imagem }}" width="600" height="600" />
               <div class="caption">
               <p>{{ $carouse->nome }}</p>

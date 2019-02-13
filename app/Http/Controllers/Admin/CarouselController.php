@@ -7,6 +7,7 @@ use Comercio\Http\Controllers\Controller;
 use Comercio\Categoria;
 use Comercio\Produto;
 use Comercio\Carousel;
+use Comercio\Notificao;
 
 class CarouselController extends Controller
 {
@@ -21,6 +22,8 @@ class CarouselController extends Controller
             'produtos' => Produto::all(),
             'categorias' => Categoria::all(),
             'carousel' => Carousel::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
         return view('admin.carousel.index')->with($params);
     }
@@ -35,6 +38,8 @@ class CarouselController extends Controller
         $params = [
             'categorias' => Categoria::all(),
             'produtos' => Produto::all(),
+            'totalproduto' => produto::all()->count(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
         return view('admin.carousel.create')->with($params);
     }
@@ -95,6 +100,8 @@ class CarouselController extends Controller
         $params = [
             'categorias' => Categoria::all(),
             'carousel' => Carousel::find($id),
+            'totalproduto' => produto::all()->count(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
         return view('admin.carousel.delete')->with($params);
     }
@@ -111,6 +118,8 @@ class CarouselController extends Controller
         $params = [
             'categorias' => Categoria::all(),
             'carousel' => Carousel::find($id),
+            'totalproduto' => produto::all()->count(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
         return view('admin.carousel.edit')->with($params);
     }

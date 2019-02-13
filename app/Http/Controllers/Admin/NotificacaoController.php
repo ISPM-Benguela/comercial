@@ -1,8 +1,13 @@
 <?php
 
-namespace Comercio\Http\Controllers;
+namespace Comercio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Comercio\Http\Controllers\Controller;
+use Comercio\Notificao;
+use Auth;
+use Comercio\Produto;
+
 
 class NotificacaoController extends Controller
 {
@@ -13,7 +18,21 @@ class NotificacaoController extends Controller
      */
     public function index()
     {
-        //
+        if(!Auth::user()){
+            $total = 0;
+
+        }else{
+            
+          $total = Notificao::where('nivel', 1)->count();
+        }
+
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'notificacao' => Notificao::all(),
+            
+        ];
+        return view('admin.notificacao.index')->with($params);
     }
 
     /**
@@ -23,7 +42,12 @@ class NotificacaoController extends Controller
      */
     public function create()
     {
-        //
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'notificacao' => Notificao::all(),
+            'totalproduto' => produto::all()->count(),
+        ];
+        return view('admin.notificacao.create')->with($params);
     }
 
     /**
@@ -34,7 +58,19 @@ class NotificacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'notificador' => 'required',
+            'nivel' => 'required',
+            'notificacao' => 'required',
+        ]);
+
+        $nofiticacao = Notificao::create([
+            'user_id' => $request->input('user_id'),
+            'nivel' => $request->input('nivel'),
+            'notificacao' => $request->input('notificacao')
+        ]);
+
+        return redirect()->route('notificacao.index')->with('success', 'Grupo notificado com sucesso.');
     }
 
     /**

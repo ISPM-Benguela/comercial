@@ -8,11 +8,13 @@ use Comercio\Http\Controllers\Controller;
 use Comercio\User;
 use Auth;
 use Comercio\Perfil;
+use Comercio\Produto;
 use Comercio\Categoria;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Comercio\Notificao;
 
 //Enables us to output flash messaging
 use Session;
@@ -37,6 +39,8 @@ class UsuarioController extends Controller
         $params = [
             'usuarios' => $usuarios,
             'categorias' => Categoria::all(),
+            'totalproduto' => Produto::all()->count(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
         
         return view('admin.usuarios.index')->with($params);
@@ -53,6 +57,8 @@ class UsuarioController extends Controller
         $params = [
             'nivel' => Role::get(),
             'categorias' => Categoria::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
         return view('admin.usuarios.create')->with($params);
     }
@@ -103,7 +109,11 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        return redirect('usuarios'); 
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::all()->count(),
+        ];
+        return redirect('usuarios')->with($params); 
     }
 
     /**
@@ -118,7 +128,10 @@ class UsuarioController extends Controller
         $nivel = Role::get(); //Get all roles
         $categorias = Categoria::all();
 
-        return view('admin.usuarios.edit', compact('user', 'nivel', 'categorias'));
+        $notitotal =Notificao::where('nivel', 1)->count();
+        $totalproduto = produto::all()->count();
+
+        return view('admin.usuarios.edit', compact('user', 'nivel', 'categorias','notitotal','totalproduto'));
     }
 
     /**

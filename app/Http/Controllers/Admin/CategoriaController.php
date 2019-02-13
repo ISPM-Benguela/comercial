@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Categoria;
 use Comercio\Produto;
-
+use Comercio\Notificao;
 
 class CategoriaController extends Controller
 {
@@ -20,11 +20,13 @@ class CategoriaController extends Controller
         
         $params = [
             'titulo' => 'Categoria'
+            
         ];
 
         return view('admin.categoria.index')->with([
             'params' => $params,
             'categorias' => Categoria::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ]);
     }
 
@@ -39,6 +41,7 @@ class CategoriaController extends Controller
             'titulo' => 'Produtos',
             'categorias' => Categoria::all(),
             'produtos' => Produto::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
 
         return view('admin.categoria.create')->with($params);
@@ -73,6 +76,7 @@ class CategoriaController extends Controller
     {
         $params = [
             'categoria' => Categoria::find($id),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
        return view('admin.categoria.delete')->with($params);
     }
@@ -88,6 +92,7 @@ class CategoriaController extends Controller
         $params = [
             'categoria' => Categoria::find($id),
             'categorias' => Categoria::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
         ];
        return view('admin.categoria.edit')->with($params);
     }

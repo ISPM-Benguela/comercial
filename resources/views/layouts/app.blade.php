@@ -92,7 +92,7 @@
 						<div class="menu-desktop">
 							<ul class="main-menu">
 								<li>
-									<a href="{{route('usuarios.index')}}"><i class="fa fa-group"></i> Funcionarios</a>
+									<a href="{{route('usuarios.index')}}"><i class="fa fa-group"></i> Usuários</a>
 								</li>
 								<li><a href="{{route('previlegios.index')}}"><i class="fa fa-key"></i> Previlégios</a></li>
 								<li><a href="{{route('nivel.index')}}"><i class="fa fa-unlock"></i> Niveis</a></li>
@@ -105,8 +105,15 @@
 								<i class="zmdi zmdi-search"></i>
 							</div>
 	
-							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
 								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
+
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="
+							{{ $notitotal }}
+							
+							">
+								<i class="zmdi zmdi-notifications"></i>
 							</div>
 	
 							<img src="{{asset('storage')}}/{{Auth::user()->perfil->imagem }}"  alt="perfil "/>
@@ -306,11 +313,11 @@
 						<div class="corpo">
 							<ul class="nav">
 									<li> <i class="icon fa fa-home"></i><a href="{{route('inicio')}}"> Inicio </a></li>
-									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">43</span></a></li>
+									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">{{ $totalproduto }}</span></a></li>
 									<li><a href="{{route('categorias.index')}}">Categoria</a></li>
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
 									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
-									<li><i class="icon fa fa-feed"></i><a href="{{ route('notificacao.index')}}"> Notificações <span class="badge badge-danger">15</span></a></li>
+									<li><i class="icon fa fa-feed"></i><a href="{{ route('notificacao.index')}}"> Notificações <span class="badge badge-danger">{{ $notitotal }}</span></a></li>
 									<li><i class="icon fa fa-gears"></i><a href="{{ route('carousel.index')}}"> Carousel </a></li>
 							</ul>
 						</div>
@@ -438,9 +445,7 @@
 				
 
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib cant be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>
 			</div>
@@ -480,7 +485,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 	<script src="{{asset('vendor/slick/slick.min.js')}}"></script>
 	<script src="{{asset('js/slick-custom.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
+	<script src="{{asset('vendor/parallax100/parallax100.js')}}"></script>
 	<script>
         $('.parallax100').parallax100();
 	</script>

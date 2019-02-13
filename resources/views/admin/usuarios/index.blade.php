@@ -44,6 +44,6 @@
         </table>
     </div>
 
-    <div><a href="{{ route('usuarios.create') }}" class="btn btn-success"><i class="fa fa-group"></i> cadastrar usuario</a></div>		
+    <div><a href="{{ route('usuarios.create') }}" class="btn btn-success"><i class="fa fa-user"></i> Cadastrar funcionário</a></div>		
     {!! $usuarios->links() !!}
 @stop

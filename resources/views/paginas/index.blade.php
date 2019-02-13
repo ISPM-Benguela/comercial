@@ -143,7 +143,7 @@
 
             <div class="p-b-10">
 				<h3 class="ltext-103 cl5">
-					Produtos em disponivel
+					Mais Produtos 
 				</h3>
 			</div>
 

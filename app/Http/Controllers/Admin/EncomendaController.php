@@ -4,6 +4,8 @@ namespace Comercio\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
+use Comercio\Notificao;
+use Comercio\Produto;
 
 class EncomendaController extends Controller
 {
@@ -14,7 +16,11 @@ class EncomendaController extends Controller
      */
     public function index()
     {
-        return view('encomendas.index');
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::all()->count(),
+        ];
+        return view('encomendas.index')->with($params);
     }
 
     /**

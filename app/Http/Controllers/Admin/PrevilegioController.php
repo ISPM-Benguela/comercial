@@ -7,6 +7,8 @@ use Comercio\Http\Controllers\Controller;
 
 use Auth;
 use Comercio\Categoria;
+use Comercio\Notificao;
+use Comercio\Produto;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -29,6 +31,8 @@ class PrevilegioController extends Controller
         $params = [
             'permicao' => Permission::all(),
             'categorias' => Categoria::all(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
             
         ];
         return view('admin.previlegios.index')->with($params);
@@ -43,7 +47,10 @@ class PrevilegioController extends Controller
     {
         $params = [
              'nivel' => Role::get(), // Pega todos previlegios
-             'categorias' => Categoria::all()
+             'categorias' => Categoria::all(),
+
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
 
         return view('admin.previlegios.create')->with($params);
@@ -91,7 +98,12 @@ class PrevilegioController extends Controller
      */
     public function show($id)
     {
-        return redirect('previlegios');
+        $params = [
+
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+        ];
+        return redirect('previlegios')->with($params);
     }
 
     /**
@@ -105,6 +117,9 @@ class PrevilegioController extends Controller
         $params = [
             'permicao' => Permission::findOrFail($id),
             'categorias' => Categoria::all(),
+
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
 
         return view('admin.previlegios.edit')->with($params);

@@ -9,6 +9,8 @@ use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Comercio\Categoria;
+use Comercio\Notificao;
+use Comercio\Produto;
 
 use Session;
 
@@ -28,6 +30,9 @@ class NivelController extends Controller
         $params = [
               'niveis' => Role::all(), // Pegamos todos os niveis ex: admin, funcionarios etc
               'categorias' => Categoria::all(),
+
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
         ];
         return view('admin.nivel.index')->with($params);
     }
@@ -88,7 +93,11 @@ class NivelController extends Controller
      */
     public function show($id)
     {
-        return redirect('nivel');
+        $params = [
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+        ];
+        return redirect('nivel')->with($params);
     }
 
     /**
@@ -101,8 +110,10 @@ class NivelController extends Controller
     {
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
+        $notitotal = Notificao::where('nivel', 1)->count();
+        $totalproduto = produto::all()->count();
 
-        return view('admin.nivel.edit', compact('role', 'permissions'));
+        return view('admin.nivel.edit', compact('role', 'permissions','notitotal','totalproduto'));
     }
 
     /**

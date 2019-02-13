@@ -13,7 +13,7 @@
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div><br>
 @if(!$nivel->isEmpty()) 
-    <h4>Atribuir permicao</h4>
+    <h4>Atribuir nível</h4>
 
     @foreach ($nivel as $cada) 
         {{ Form::checkbox('nivel[]',  $cada->id ) }}
