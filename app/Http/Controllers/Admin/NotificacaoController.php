@@ -30,7 +30,7 @@ class NotificacaoController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
             'notificacao' => Notificao::all(),
-            
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.notificacao.index')->with($params);
     }
@@ -46,6 +46,7 @@ class NotificacaoController extends Controller
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'notificacao' => Notificao::all(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.notificacao.create')->with($params);
     }

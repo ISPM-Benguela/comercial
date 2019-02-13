@@ -71,6 +71,7 @@
                                 <td>{{$row->nome}}</td>
                                 <td>{{number_format($row->preco,2)}}</td>
                                 <td>{{$row->descricao}}</td>
+ 
                                 <td>
                                     <a href="{{ route('produtos.edit', ['id' => $row->id]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> Editar produto</a>
                                     <a href=""{{route('promover.edit', ['id' => $produto->id])}}" class="btn btn-success btn-xs"><i class="fa fa-trash-o" title="Promover"></i> Promover produto</a>

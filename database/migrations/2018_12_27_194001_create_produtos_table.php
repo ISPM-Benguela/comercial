@@ -24,6 +24,8 @@ class CreateProdutosTable extends Migration
             $table->integer('stock');
             $table->boolean('promocao')->default(false);
             $table->float('novo_preco')->nullable();
+            $table->string('inicio')->nullable();
+            $table->string('fim')->nullable();
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('categorias');

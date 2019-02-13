@@ -41,6 +41,7 @@ class UsuarioController extends Controller
             'categorias' => Categoria::all(),
             'totalproduto' => Produto::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         
         return view('admin.usuarios.index')->with($params);
@@ -59,6 +60,7 @@ class UsuarioController extends Controller
             'categorias' => Categoria::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.usuarios.create')->with($params);
     }
@@ -127,11 +129,11 @@ class UsuarioController extends Controller
         $user = User::findOrFail($id); //Get user with specified id
         $nivel = Role::get(); //Get all roles
         $categorias = Categoria::all();
-
+        $totalpromo = produto::where('promocao', 1)->count();
         $notitotal =Notificao::where('nivel', 1)->count();
         $totalproduto = produto::all()->count();
 
-        return view('admin.usuarios.edit', compact('user', 'nivel', 'categorias','notitotal','totalproduto'));
+        return view('admin.usuarios.edit', compact('totalpromo','user', 'nivel', 'categorias','notitotal','totalproduto'));
     }
 
     /**

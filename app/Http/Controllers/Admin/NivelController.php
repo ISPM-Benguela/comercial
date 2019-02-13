@@ -33,6 +33,7 @@ class NivelController extends Controller
 
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.nivel.index')->with($params);
     }
@@ -47,6 +48,9 @@ class NivelController extends Controller
         $params = [
              'permicoes' => Permission::all(), //Get all permissions
              'categorias' => Categoria::all(),
+             'totalpromo' => produto::where('promocao', 1)->count(),
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::all()->count(),
         ];
 
         return view('admin.nivel.create')->with($params);
@@ -112,8 +116,9 @@ class NivelController extends Controller
         $permissions = Permission::all();
         $notitotal = Notificao::where('nivel', 1)->count();
         $totalproduto = produto::all()->count();
+        $totalpromo = produto::where('promocao', 1)->count();
 
-        return view('admin.nivel.edit', compact('role', 'permissions','notitotal','totalproduto'));
+        return view('admin.nivel.edit', compact('role', 'permissions','notitotal','totalproduto','totalpromo'));
     }
 
     /**

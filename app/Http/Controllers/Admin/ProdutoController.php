@@ -40,9 +40,10 @@ class ProdutoController extends Controller
         return view('admin.produtos.index')->with([
             'params' => $params,
             'categorias' => Categoria::all(),
-            'produtos' => Produto::all(),
-            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'produtos' => Produto::where('promocao', false)->get(),
+            'notitotal' => Notificao::where('nivel', 0)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ]);
     }
 
@@ -59,6 +60,7 @@ class ProdutoController extends Controller
             'produtos' => Produto::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
 
         return view('produtos.create')->with($params);
@@ -131,6 +133,7 @@ class ProdutoController extends Controller
             'produto' => Produto::find($id),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
 
         return view('admin.produtos.delete')->with($params);
@@ -150,6 +153,7 @@ class ProdutoController extends Controller
             'produto' => Produto::find($id),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
 
         return view('admin.produtos.edit')->with($params);
@@ -179,10 +183,5 @@ class ProdutoController extends Controller
         $produto->delete();
 
         return redirect()->route('produtos.index')->with('error', 'Actividade eliminada com sucesso.');
-    }
-
-    public function promover($id)
-    {
-        return "Promo";
     }
 }

@@ -19,6 +19,7 @@ class EncomendaController extends Controller
         $params = [
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('encomendas.index')->with($params);
     }

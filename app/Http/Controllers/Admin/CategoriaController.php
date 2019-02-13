@@ -27,6 +27,8 @@ class CategoriaController extends Controller
             'params' => $params,
             'categorias' => Categoria::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ]);
     }
 
@@ -42,6 +44,8 @@ class CategoriaController extends Controller
             'categorias' => Categoria::all(),
             'produtos' => Produto::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
 
         return view('admin.categoria.create')->with($params);
@@ -77,6 +81,8 @@ class CategoriaController extends Controller
         $params = [
             'categoria' => Categoria::find($id),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
        return view('admin.categoria.delete')->with($params);
     }
@@ -93,6 +99,8 @@ class CategoriaController extends Controller
             'categoria' => Categoria::find($id),
             'categorias' => Categoria::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
        return view('admin.categoria.edit')->with($params);
     }

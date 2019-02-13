@@ -29,6 +29,7 @@ class PerfilController extends Controller
             'perfil' => Perfil::find($user),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => Produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ]);
     }
 
@@ -81,6 +82,7 @@ class PerfilController extends Controller
         return view('admin.perfil.index')->with([
             'params' => $params,
             'perfil' => Perfil::find($user),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ]);
     }
 

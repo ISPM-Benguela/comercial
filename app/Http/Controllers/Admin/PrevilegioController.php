@@ -33,6 +33,7 @@ class PrevilegioController extends Controller
             'categorias' => Categoria::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
             
         ];
         return view('admin.previlegios.index')->with($params);
@@ -48,7 +49,7 @@ class PrevilegioController extends Controller
         $params = [
              'nivel' => Role::get(), // Pega todos previlegios
              'categorias' => Categoria::all(),
-
+             'totalpromo' => produto::where('promocao', 1)->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
         ];
@@ -102,6 +103,7 @@ class PrevilegioController extends Controller
 
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return redirect('previlegios')->with($params);
     }
@@ -117,7 +119,7 @@ class PrevilegioController extends Controller
         $params = [
             'permicao' => Permission::findOrFail($id),
             'categorias' => Categoria::all(),
-
+            'totalpromo' => produto::where('promocao', 1)->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
         ];

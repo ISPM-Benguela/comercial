@@ -24,6 +24,7 @@ class CarouselController extends Controller
             'carousel' => Carousel::all(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
             'totalproduto' => produto::all()->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.carousel.index')->with($params);
     }
@@ -40,6 +41,7 @@ class CarouselController extends Controller
             'produtos' => Produto::all(),
             'totalproduto' => produto::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.carousel.create')->with($params);
     }
@@ -102,6 +104,7 @@ class CarouselController extends Controller
             'carousel' => Carousel::find($id),
             'totalproduto' => produto::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.carousel.delete')->with($params);
     }
@@ -120,6 +123,7 @@ class CarouselController extends Controller
             'carousel' => Carousel::find($id),
             'totalproduto' => produto::all()->count(),
             'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalpromo' => produto::where('promocao', 1)->count(),
         ];
         return view('admin.carousel.edit')->with($params);
     }

@@ -314,6 +314,7 @@
 							<ul class="nav">
 									<li> <i class="icon fa fa-home"></i><a href="{{route('inicio')}}"> Inicio </a></li>
 									<li> <i class="icon fa fa-shopping-basket"></i><a href="{{route('produtos.index')}}"> Produtos <span class="badge">{{ $totalproduto }}</span></a></li>
+									<li> <i class="icon fa fa-hourglass-start"></i><a href="{{route('promover.index')}}"> Promoção <span class="badge">{{ $totalpromo }}</span></a></li>
 									<li><a href="{{route('categorias.index')}}">Categoria</a></li>
 									<li><i class="icon fa fa-group"></i><a href="{{route('vendas.index')}}"> Aprovar  vendas</a></li>
 									<li><i class="icon fa fa-gift"></i><a href="{{route('encomendas.index')}}"> Encomendas <span class="badge badge-danger">15</span> </a></li>
