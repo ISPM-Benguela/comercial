@@ -13,7 +13,14 @@ class EncomendarController extends Controller
      */
     public function index()
     {
-        //
+        $params = [
+            
+            'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
+            'desponivel' => Produto::all(),
+            'total' => $total,
+        ];
+
+        return view('paginas.encomendar')->with($params);
     }
 
     /**

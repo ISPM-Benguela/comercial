@@ -63,6 +63,8 @@
  
                                     <div class="size-204 flex-w flex-m respon6-next">
 										 <input type="hidden" name="id" value="{{ $produto->id }}">
+										 <input type="hidden" name="preco" value="{{ $produto->preco }}">
+										 <input type="hidden" name="produto" value="{{ $produto->nome }}">
                                         <input type="hidden" name="_token" value="{{ Session::token() }}">
 										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
 											Adicionar ao carrinho

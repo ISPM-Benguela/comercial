@@ -41,6 +41,8 @@ Route::resource("categoria","CategoriaController");
 
 Route::resource("carrinho","CarrinhoController");
 
+Route::resource('encomendar', 'EncomendarController');
+
 Route::get('image-upload',['as'=>'image.upload','uses'=>'HomeController@imageUpload']);
 
 Route::post('image-upload',['as'=>'image.upload.post','uses'=>'HomeController@imageUploadPost']);
