@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
         <div class="principal">
-            <img src="images/user.jpg"   />
+            <img src="{{asset('images/icons/logo.jpg')}}" width="100" heigh="100"   />
 
             <h3>Entrar no sistema</h3>
 
@@ -14,7 +14,8 @@
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  autofocus>
+                            <label>Email</label>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email " style="height: 50px;"  autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -27,7 +28,8 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                             <div class="col-md-12">
-                                <input id="password" type="password" class="form-control" name="password" >
+                            <label>Senha</label>
+                                <input id="password" type="password" class="form-control" placeholder="Senha" style="height: 50px;" name="password" >
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -50,7 +52,7 @@
                         <div class="form-group">
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-primary">
-                                    Entrar
+                                 Entrar
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('register') }}">

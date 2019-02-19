@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::resource('test', 'TestandoController');
+
 Route::get('/home', function(){
     return redirect('/');
   });
@@ -58,7 +60,6 @@ Route::group(["middleware" => "auth"], function(){
 
         Route::resource("usuarios","UsuarioController");
 
-        Route::resource("artigos","ArtigoController");
 
         Route::resource('nivel', 'NivelController');
 

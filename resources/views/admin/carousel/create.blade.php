@@ -16,8 +16,8 @@
         @endif
     </div>
     <div class="form-group{{ $errors->has('preco') ? ' has-error' : '' }}">
-        {{ Form::label('name', 'Preco') }}
-        <input type="text" name="preco" class="form-control" value="{{ Request::old('preco') ?: '' }}" />
+        {{ Form::label('name', 'Precos') }}
+        <input type="number" name="preco" placeholder="10,00 kz" value="{{ Request::old('preco') ?: '' }}"  min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="c2" />
         @if ($errors->has('preco'))
          <span class="help-block">{{ $errors->first('preco') }}</span>
         @endif

@@ -33,4 +33,8 @@ class Produto extends Model
     {
         return $this->belongsTo('Comercio/Carousel');
     }
+    public function encomenda()
+    {
+        return $this->belongsTo('Comercio\Encomenda');
+    }
 }

@@ -38,7 +38,7 @@
 <div class="form-group{{ $errors->has('preco') ? ' has-error' : '' }}">
     <label for="">Preco</label>
     <div class="col-md-8 col-sm-8 col-xs-12">
-        <input type="text" value="{{ $produto->preco }}" id="preco" placeholder="Informar o nome do produto" name="preco" class="form-control col-md-8 col-xs-12">
+        <input type="number" value="{{ $produto->preco}}" id="preco" placeholder="10,00 kz" name="preco"  min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" id="c2" class="form-control col-md-8 col-xs-12">
         @if ($errors->has('preco'))
         <span class="help-block">{{ $errors->first('preco') }}</span>
         @endif

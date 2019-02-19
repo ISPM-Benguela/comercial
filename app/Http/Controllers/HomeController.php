@@ -8,6 +8,7 @@ use Comercio\Produto;
 use Comercio\Carousel;
 use Comercio\Contacto;
 use Comercio\Carrinho;
+use Comercio\Notificao;
 use Auth;
 
 
@@ -20,7 +21,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware(['auth', 'isAdmin']);
+         //$this->middleware(['auth']);
     }
 
     /**
@@ -37,11 +38,11 @@ class HomeController extends Controller
 
         }else{
             $user = Auth::user()->id;
-            $total = Carrinho::where('user_id', $user)->count();
+            $total = Carrinho::where('user_id', $user)->count(); // select * from carrinho where user_id = $user
         }
 
         $params = [
-            'categorias' => Categoria::all(),
+            'categorias' => Categoria::all(), // select * from categiras
             'carousel' => Carousel::all(),
             'produtos' => Produto::take(4)->orderBy('created_at','desc')->get(),
             'desponivel' => Produto::all(),
@@ -121,5 +122,19 @@ class HomeController extends Controller
 
         return view('produtos.categoria');
     }
+    public function testando()
+    {
+        $params = [
+            'categorias' => Categoria::all(),
+            'titulo' => "Produtos",
+            'notitotal' => Notificao::where('nivel', 1)->count(),
+            'totalproduto' => Produto::where('promocao', 0)->count(),
+            'totalpromo' => Produto::where('promocao', 1)->count(),
+            'totalEncomeda' => Produto::where('stock', 0)->count(), 
+            'categTotal' => Categoria::all()->count(),
+        ];
 
+
+        return view('paginas.teste')->with($params);
+    }
 }

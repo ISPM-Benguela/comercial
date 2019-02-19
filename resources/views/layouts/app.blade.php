@@ -126,7 +126,7 @@
 			<div class="wrap-header-mobile">
 				<!-- Logo moblie -->
 				<div class="logo-mobile">
-					<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+					<a href=""><img src="{{asset('images/icons/logo.jpg')}}" height="80" alt="IMG-LOGO"></a>
 				</div>
 	
 				<!-- Icon header -->
@@ -561,6 +561,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script></a>
 			})
 		});
 	</script>
+<!--===============================================================================================-->
+<script src="{{asset('js/js-webshim/minified/polyfiller.js')}}"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            webshims.setOptions('forms-ext', {
+            replaceUI: 'auto',
+            types: 'number'
+        });
+             webshims.polyfill('forms forms-ext');
+        });
+    </script>
 <!--===============================================================================================-->
 	<script src="{{asset('js/main.js')}}"></script>
     @yield('footer')
