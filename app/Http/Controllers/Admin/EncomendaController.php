@@ -7,6 +7,7 @@ use Comercio\Http\Controllers\Controller;
 use Comercio\Notificao;
 use Comercio\Produto;
 use Comercio\Categoria;
+use Comercio\Encomenda;
 
 
 class EncomendaController extends Controller
@@ -24,6 +25,7 @@ class EncomendaController extends Controller
             'totalpromo' => produto::where('promocao', 1)->count(),
             'totalEncomeda' => Produto::where('stock', 0)->count(), 
             'categTotal' => Categoria::all()->count(),
+            'encomendas' => Encomenda::all(),
         ];
         return view('encomendas.index')->with($params);
     }

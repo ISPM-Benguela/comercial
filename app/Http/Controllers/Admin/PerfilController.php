@@ -5,6 +5,7 @@ namespace Comercio\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Comercio\Http\Controllers\Controller;
 use Comercio\Perfil;
+use Comercio\Categoria;
 use Auth;
 use Comercio\Notificao;
 use Comercio\Produto;

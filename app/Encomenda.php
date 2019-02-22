@@ -17,6 +17,6 @@ class Encomenda extends Model
     }
     public function cliente()
     {
-        return $this->belongsTo('Comercio\Encomenda');
+        return $this->belongsTo('Comercio\User');
     }
 }

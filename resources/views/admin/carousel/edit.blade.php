@@ -17,7 +17,7 @@
     </div>
     <div class="form-group{{ $errors->has('preco') ? ' has-error' : '' }}">
         {{ Form::label('name', 'Preco') }}
-        <input type="text" name="preco" class="form-control" value="{{ $carousel->nome}}preco" />
+        <input type="number" name="preco" placeholder="10,00 kz" value="{{ $carousel->preco}}"  min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="c2" />
         @if ($errors->has('preco'))
          <span class="help-block">{{ $errors->first('preco') }}</span>
         @endif

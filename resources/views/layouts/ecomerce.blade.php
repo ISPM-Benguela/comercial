@@ -287,11 +287,11 @@
 		</div>
 	</div>
 
-		
+   
     
 	@yield('principal')
 	
-
+   	@include('includes.alerts')	
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">

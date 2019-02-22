@@ -8,6 +8,7 @@ use Comercio\Produto;
 use Comercio\Carousel;
 use Comercio\Contacto;
 use Comercio\Carrinho;
+use Comercio\Encomenda;
 use Auth;
 
 class EncomendarController extends Controller
@@ -82,6 +83,7 @@ class EncomendarController extends Controller
     {
         if(!Auth::user()){
             $total = 0;
+            return redirect()->route('encomendar.index')->with('warning', "Para encomendar um produto, é necessário estar logado");
 
         }else{
             $user = Auth::user()->id;
@@ -95,8 +97,13 @@ class EncomendarController extends Controller
             'desponivel' => Produto::all(),
             'total' => $total,
         ];
-        echo $id;
-        #return view('paginas.encomendar')->with($params);
+        
+        $encomenda = Encomenda::create([
+            'user_id'=> $user,
+            'produto_id' => $id,
+        ]);
+
+        return redirect()->route('encomendar.index')->with('success', "Produto encomendado com sucesso.");
     }
 
     /**
